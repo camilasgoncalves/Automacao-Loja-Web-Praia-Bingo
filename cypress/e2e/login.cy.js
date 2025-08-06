@@ -29,9 +29,9 @@ describe('Fluxo de Login', () => {
         home.acessarLogin()
         login.naoEncontraID()
 
-})
+    })
 
-   it('Realiza logout com sucesso', () => {
+    it('Realiza logout com sucesso', () => {
         home.acessarSite()
         home.acessarLogin()
         login.realizarLogin()

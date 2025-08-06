@@ -1,0 +1,46 @@
+import { Home } from "../PO/homePO";
+import { Login } from "../PO/loginPO";
+
+describe('Fluxos da Home', () => {
+
+    const login = new Login()
+    const home = new Home()
+
+    it('Validar coleta de Presente', () => {
+        home.acessarSite()
+        home.acessarLogin()
+        login.realizarLogin()
+        home.validarColetaPresente()
+        home.elementos.lblUser().should('be.visible')
+    })
+
+    it('Validar presente já coletado', () => {
+        home.acessarSite()
+        home.acessarLogin()
+        login.realizarLogin()
+        home.elementos.btnColetado().should('be.visible')
+    })
+
+    it('Validar botão "Fichas"', () =>{
+        home.acessarSite()
+        home.acessarLogin()
+        login.realizarLogin()
+        home.validarBotaoFichas()
+    })
+
+    it('Validar botão "Dindins"', () =>{
+        home.acessarSite()
+        home.acessarLogin()
+        login.realizarLogin()
+        home.validarBotaoDindins()
+    })
+
+    it('Validar botão "Pequenos Preços"', () =>{
+        home.acessarSite()
+        home.acessarLogin()
+        login.realizarLogin()
+        home.validarBotaoPequenosPrecos()
+    })
+
+})
+
