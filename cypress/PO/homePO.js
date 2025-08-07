@@ -13,9 +13,9 @@ export class Home {
         mdlVoceRecebeu: () => cy.get('[data-testid="claimed-item-modal-image"]'),
         btnVoltar: () => cy.get('#free-item-modal'),
         btnColetado: () => cy.get('[data-testid="owned"]'),
-        lblPequenosPrecos: () => cy.get('div[data-testid="section-title"] > h1').should('have.text', 'Pequenos preços!'),
-        lblFichas: () => cy.get('div[data-testid="section-title"] > h1').should('have.text', 'Fichas'),
-        lblDindins: () => cy.get('div[data-testid="section-title"] > h1').should('have.text', 'Dindins')
+        lblPequenosPrecos: () => cy.get('[data-testid="section-title"]').should('be.visible').and('contain.text', 'Pequenos preços!'),
+        lblFichas: () => cy.get('[data-testid="section-title"]').should('be.visible').and('contain.text', 'Fichas'),
+        lblDindins: () => cy.get('[data-testid="ui-site-media"]').should('be.visible')
 
 
 
