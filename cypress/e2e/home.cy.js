@@ -85,7 +85,7 @@ describe('Fluxos da Home', () => {
         home.validarErroCupom()
     })
 
-     it('Valida Cookies Analíticos e Lista em Central de Preferência de Privacidade', () => {
+     it('Valida Cookies Essenciais e Lista em Central de Preferência de Privacidade', () => {
         home.acessarSite()
         home.aceitarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
