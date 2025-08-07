@@ -23,7 +23,7 @@ describe('Fluxos da Home', () => {
         home.elementos.btnColetado().should('be.visible')
     })
 
-    it('Validar botão "Fichas"', () =>{
+    it('Validar botão "Fichas"', () => {
         home.acessarSite()
         home.aceitarCookiesSeExistirem()
         home.acessarLogin()
@@ -31,7 +31,7 @@ describe('Fluxos da Home', () => {
         home.validarBotaoFichas()
     })
 
-    it('Validar botão "Dindins"', () =>{
+    it('Validar botão "Dindins"', () => {
         home.acessarSite()
         home.aceitarCookiesSeExistirem()
         home.acessarLogin()
@@ -39,7 +39,7 @@ describe('Fluxos da Home', () => {
         home.validarBotaoDindins()
     })
 
-    it('Validar botão "Pequenos Preços"', () =>{
+    it('Validar botão "Pequenos Preços"', () => {
         home.acessarSite()
         home.aceitarCookiesSeExistirem()
         home.acessarLogin()
@@ -47,30 +47,53 @@ describe('Fluxos da Home', () => {
         home.validarBotaoPequenosPrecos()
     })
 
-    it('Validar redirecionamento para Youtube', () =>{
+    it('Validar redirecionamento para Youtube', () => {
         home.acessarSite()
         home.aceitarCookiesSeExistirem()
         home.validarBotaoYoutube()
     })
 
-     it('Validar redirecionamento para Instagram', () =>{
+    it('Validar redirecionamento para Instagram', () => {
         home.acessarSite()
         home.aceitarCookiesSeExistirem()
         home.validarBotaoInstagram()
     })
 
-     it('Validar redirecionamento para Facebook', () =>{
+    it('Validar redirecionamento para Facebook', () => {
         home.acessarSite()
         home.aceitarCookiesSeExistirem()
         home.validarBotaoFacebook()
     })
 
-    it('Valida Cookies Essenciais e Lista em Central de Preferência de Privacidade', () =>{
+    it('Validar redirecionamento para Google Play', () => {
         home.acessarSite()
-       // home.aceitarCookiesSeExistirem()
+        home.aceitarCookiesSeExistirem()
+        home.validarBotaoGooglePlay()
+    })
+
+    it('Validar redirecionamento para App Store', () => {
+        home.acessarSite()
+        home.aceitarCookiesSeExistirem()
+        home.validarBotaoAppStore
+    })
+
+    it('Erro ao inserir Cupom de Desconto', () => {
+        home.acessarSite()
+        home.acessarLogin()
+        login.realizarLogin()
+        home.fecharAdicionarTelaInicio()
+        home.validarErroCupom()
+    })
+
+     it('Valida Cookies Analíticos e Lista em Central de Preferência de Privacidade', () => {
+        home.acessarSite()
+        home.aceitarCookiesSeExistirem()
+        home.fecharAdicionarTelaInicio()
         home.validarCentralPrivacidade()
         home.validarCookiesEssenciais()
         home.validarListaCookiesEssenciais()
+
     })
+    
 })
 
