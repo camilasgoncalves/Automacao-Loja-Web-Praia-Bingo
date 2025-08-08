@@ -3,7 +3,7 @@ export class Home {
     elementos = {
 
         btnAcessar: () => cy.contains('div.auth-button__login-text', 'Acessar'),
-        btnLanguage: () => cy.get('select.locale-select'),
+        btnLanguage: () => cy.get('select.locale-select.locale-select--compact'),
         btnFichas: () => cy.get('button.tab-bar__button--chips'),
         btnDindins: () => cy.get('button.tab-bar__button--greens'),
         btnPequenosPrecos: () => cy.get('button.tab-bar__button--combos'),
@@ -217,19 +217,69 @@ export class Home {
         cy.contains('a.ui-site-calltoaction').should('have.attr', 'href', 'https://pipastudios.com/deeplinks/classic/?goto=ibiza&_xm=212542.402170118508904462')
     }
 
-    validarPergunta1(){
-        this.elementos.btnPergunta1().should('be.visible').click()
-        cy.get('[data-testid="editor-text"]').contains('Sim, e apenas no Praia Bingo! Este site serve apenas como uma loja virtual, não sendo possível jogar o Praia Bingo por aqui.')
+    validarPerguntar(pergunta) {
+        switch (pergunta) {
+            case 'Posso usar os itens que compro na Loja Web no jogo Praia Bingo?':
+                this.elementos.btnPergunta1().should('be.visible').click()
+                cy.get('[data-testid="editor-text"]').contains('Sim, e apenas no Praia Bingo! Este site serve apenas como uma loja virtual, não sendo possível jogar o Praia Bingo por aqui.')
+                break
+            case 'Quanto tempo demora para liberar no Praia Bingo os itens que comprei aqui na loja?':
+                this.elementos.btnPergunta2().should('be.visible').click()
+                cy.get('[data-testid="editor-text"]').contains('Em até 3 minutos depois de ter efetuado a compra, os itens estarão no aplicativo no Praia Bingo em seu celular ou tablet, disponíveis para você curtir. ')
+                break
+            case 'Só posso comprar se informar meu ID?':
+                this.elementos.btnPergunta3().should('be.visible').click()
+                cy.get('[data-testid="editor-text"]').contains('Sim, seu ID (número de identificação) é o que vai direcionar a compra para seu usuário no jogo.')
+                break
+            case 'Onde encontro meu ID Praia Bingo?':
+                this.elementos.btnPergunta4().should('be.visible').click()
+                cy.get('[data-testid="editor-text"]').contains('Em seu aplicativo do Praia Bingo, siga as seguintes instruções para encontrar seu ID (número de identificação):')
+                break
+            case 'Meu ID não está funcionando.':
+                this.elementos.btnPergunta5().should('be.visible').click()
+                cy.get('[data-testid="editor-text"]').contains('Se você já verificou que o ID está correto e tentou algumas vezes acessar o site (esperando alguns minutos entre cada tentativa) e ainda assim não obteve sucesso, entre em contato com nosso')
+                break
+            case 'Quais são os métodos de pagamento suportados na loja? ':
+                this.elementos.btnPergunta6().should('be.visible').click()
+                cy.get('[data-testid="editor-text"]').contains('Você pode efetuar suas compras com cartões de crédito e débito e Pix. Não aceitamos pagamentos via boleto até o momento.')
+                break
+            case 'Como adicionar e salvar um método de pagamento? ':
+                this.elementos.btnPergunta7().should('be.visible').click()
+                cy.get('[data-testid="editor-text"]').contains('Selecione os itens que deseja comprar e envie para o carrinho de compra:')
+                break
+            case 'Não consigo concluir a compra porque aparece “as informações do cartão de crédito/débito não são válidas".':
+                this.elementos.btnPergunta8().should('be.visible').click()
+                cy.get('[data-testid="editor-text"]').contains('Certifique-se de ter inserido as informações corretas e tente novamente. Caso precise de ajuda, entre em contato com o nosso ')
+                break
+            case 'Não vejo meu produto comprado no jogo.':
+                this.elementos.btnPergunta9().should('be.visible').click()
+                cy.get('[data-testid="editor-text"]').contains('Certifique-se de estar conectado ao jogo com o mesmo ID Praia Bingo usado para fazer a compra. Se a compra ainda não estiver visível, entre em contato com o nosso ')
+                break
+            case 'Comprei itens para a conta de jogo errada. ':
+                this.elementos.btnPergunta10().should('be.visible').click()
+                cy.get('[data-testid="editor-text"]').contains('Entre em contato com o ').and(' para solucionar esse problema. ')
+                break
+            case 'Recebi menos itens no jogo do que comprei no site. ':
+                this.elementos.btnPergunta11().should('be.visible').click()
+                cy.get('div[data-testid="editor-text"].xds-text.xds-text-paragraph.faq-card__text.faq-card__answer-text.faq-card__answer-text--opened a').should('have.attr', 'href', 'mailto:suporte@pipastudios.com').and('contain', 'time de atendimento');
+        }
     }
 
-    validarPergunta2(){
-         this.elementos.btnPergunta2().should('be.visible').click()
-        cy.get('[data-testid="editor-text"]').contains('Em até 3 minutos depois de ter efetuado a compra, os itens estarão no aplicativo no Praia Bingo em seu celular ou tablet, disponíveis para você curtir. ')
+    validarIdiomas(idioma) {
+        switch (idioma) {
+            case 'English':
+                cy.get('select.locale-select.locale-select--compact').select('English')
+                cy.get('div[data-testid="section-title"]').contains('BIG OFFERS')
+                break
+            case 'Espanõl':
+                cy.get('select.locale-select.locale-select--compact').select('Español')
+                cy.get('div[data-testid="section-title"]').contains('Ofertas Especiales')
+                break
+            case 'Italiano':
+                cy.get('select.locale-select.locale-select--compact').select('Italiano')
+                cy.get('div[data-testid="section-title"]').contains('Grandi Offerte')
+                break
+        }
     }
 
-    validarPergunta3(){
-         this.elementos.btnPergunta3().should('be.visible').click()
-        cy.get('[data-testid="editor-text"]').contains('Sim, seu ID (número de identificação) é o que vai direcionar a compra para seu usuário no jogo.')
-    }
-    
 }

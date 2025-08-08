@@ -125,7 +125,7 @@ describe('Fluxos da Home', () => {
 
     })
 
-    it('Valida Política de Cookies em Central de Preferência e Privacidade', () =>{
+    it('Valida Política de Cookies em Central de Preferência e Privacidade', () => {
         home.acessarSite()
         home.aceitarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
@@ -133,7 +133,7 @@ describe('Fluxos da Home', () => {
         home.validarPoliticaCookies()
     })
 
-    it('Valida Política de Privacidade em Central de Preferência e Privacidade', () =>{
+    it('Valida Política de Privacidade em Central de Preferência e Privacidade', () => {
         home.acessarSite()
         home.aceitarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
@@ -141,41 +141,56 @@ describe('Fluxos da Home', () => {
         home.validarPoliticaPrivacidade
     })
 
-it('Valida botão Fechar em Central de Preferência e Privacidade', () =>{
- home.acessarSite()
+    it('Valida botão Fechar em Central de Preferência e Privacidade', () => {
+        home.acessarSite()
         home.aceitarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
         home.validarCentralPrivacidade()
         home.validarFecharCentral()
 
-})
+    })
 
-it('Valida botão Aceitar Tudo em Central de Preferência e Privacidade', () =>{
- home.acessarSite()
+    it('Valida botão Aceitar Tudo em Central de Preferência e Privacidade', () => {
+        home.acessarSite()
         home.aceitarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
         home.validarCentralPrivacidade()
         home.validarAceitarTudo()
 
-})
+    })
 
-it('Valida botão Rejeitar Tudo em Central de Preferência e Privacidade', () =>{
- home.acessarSite()
+    it('Valida botão Rejeitar Tudo em Central de Preferência e Privacidade', () => {
+        home.acessarSite()
         home.aceitarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
         home.validarCentralPrivacidade()
         home.validarRejeitarTudo()
 
-})
+    })
 
-it.only('Valida perguntas em Precisa de Ajuda?', () =>{
- home.acessarSite()
+    it('Valida perguntas em Precisa de Ajuda?', () => {
+        home.acessarSite()
         home.aceitarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
-        home.validarPergunta1()
-        home.validarPergunta2()
-        home.validarPergunta3()
-})
+        home.validarPerguntar('Posso usar os itens que compro na Loja Web no jogo Praia Bingo?')
+        home.validarPerguntar('Quanto tempo demora para liberar no Praia Bingo os itens que comprei aqui na loja?')
+        home.validarPerguntar('Só posso comprar se informar meu ID?')
+        home.validarPerguntar('Onde encontro meu ID Praia Bingo?')
+        home.validarPerguntar('Meu ID não está funcionando.')
+        home.validarPerguntar('Quais são os métodos de pagamento suportados na loja? ')
+        home.validarPerguntar('Como adicionar e salvar um método de pagamento? ')
+        home.validarPerguntar('Não consigo concluir a compra porque aparece “as informações do cartão de crédito/débito não são válidas". ')
+        home.validarPerguntar('Não vejo meu produto comprado no jogo. ')
+        home.validarPerguntar('Comprei itens para a conta de jogo errada.')
+        home.validarPerguntar('Recebi menos itens no jogo do que comprei no site. ')
+    })
 
+    it('Valida Idiomas', () => {
+        home.acessarSite()
+        home.aceitarCookiesSeExistirem()
+        home.fecharAdicionarTelaInicio()
+        home.validarIdiomas('English')
+        home.validarIdiomas('Espanõl')
+        home.validarIdiomas('Italiano')
+    })
 })
-
