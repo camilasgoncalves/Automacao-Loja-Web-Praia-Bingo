@@ -85,7 +85,7 @@ describe('Fluxos da Home', () => {
         home.validarErroCupom()
     })
 
-     it('Valida Cookies Essenciais e Lista em Central de Preferência de Privacidade', () => {
+    it('Valida Cookies Essenciais e Lista em Central de Preferência de Privacidade', () => {
         home.acessarSite()
         home.aceitarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
@@ -94,6 +94,88 @@ describe('Fluxos da Home', () => {
         home.validarListaCookiesEssenciais()
 
     })
-    
+
+    it('Valida Cookies Analíticos e Lista em Central de Preferência de Privacidade', () => {
+        home.acessarSite()
+        home.aceitarCookiesSeExistirem()
+        home.fecharAdicionarTelaInicio()
+        home.validarCentralPrivacidade()
+        home.validarCookiesAnaliticos()
+        home.validarListaCookiesAnaliticos()
+
+    })
+
+    it('Valida Cookies Funcionais e Lista em Central de Preferência de Privacidade', () => {
+        home.acessarSite()
+        home.aceitarCookiesSeExistirem()
+        home.fecharAdicionarTelaInicio()
+        home.validarCentralPrivacidade()
+        home.validarListaCookiesFuncionais()
+        home.validarListaCookiesFuncionais()
+
+    })
+
+    it('Valida Cookies de Personalização e Lista em Central de Preferência de Privacidade', () => {
+        home.acessarSite()
+        home.aceitarCookiesSeExistirem()
+        home.fecharAdicionarTelaInicio()
+        home.validarCentralPrivacidade()
+        home.validarCookiesPersonalizacao()
+        home.validarListaCookiesPersonalizacao()
+
+    })
+
+    it('Valida Política de Cookies em Central de Preferência e Privacidade', () =>{
+        home.acessarSite()
+        home.aceitarCookiesSeExistirem()
+        home.fecharAdicionarTelaInicio()
+        home.validarCentralPrivacidade()
+        home.validarPoliticaCookies()
+    })
+
+    it('Valida Política de Privacidade em Central de Preferência e Privacidade', () =>{
+        home.acessarSite()
+        home.aceitarCookiesSeExistirem()
+        home.fecharAdicionarTelaInicio()
+        home.validarCentralPrivacidade()
+        home.validarPoliticaPrivacidade
+    })
+
+it('Valida botão Fechar em Central de Preferência e Privacidade', () =>{
+ home.acessarSite()
+        home.aceitarCookiesSeExistirem()
+        home.fecharAdicionarTelaInicio()
+        home.validarCentralPrivacidade()
+        home.validarFecharCentral()
+
+})
+
+it('Valida botão Aceitar Tudo em Central de Preferência e Privacidade', () =>{
+ home.acessarSite()
+        home.aceitarCookiesSeExistirem()
+        home.fecharAdicionarTelaInicio()
+        home.validarCentralPrivacidade()
+        home.validarAceitarTudo()
+
+})
+
+it('Valida botão Rejeitar Tudo em Central de Preferência e Privacidade', () =>{
+ home.acessarSite()
+        home.aceitarCookiesSeExistirem()
+        home.fecharAdicionarTelaInicio()
+        home.validarCentralPrivacidade()
+        home.validarRejeitarTudo()
+
+})
+
+it.only('Valida perguntas em Precisa de Ajuda?', () =>{
+ home.acessarSite()
+        home.aceitarCookiesSeExistirem()
+        home.fecharAdicionarTelaInicio()
+        home.validarPergunta1()
+        home.validarPergunta2()
+        home.validarPergunta3()
+})
+
 })
 

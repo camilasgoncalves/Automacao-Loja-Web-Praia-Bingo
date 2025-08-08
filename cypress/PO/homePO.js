@@ -26,7 +26,22 @@ export class Home {
         lblCupomDesconto: () => cy.get('input[placeholder="Digite o código aqui"]'),
         btnAplicarDesconto: () => cy.get('div.xds-text-button-m').contains('APLICAR DESCONTO'),
         lblErroCupom: () => cy.get('span[data-source="server"]'),
-        btnFechar: () => cy.get('[data-testid="pwa-close-icon"]')
+        btnFechar: () => cy.get('[data-testid="pwa-close-icon"]'),
+        btnFecharCentral: () => cy.get('#close-button'),
+        btnRejeitarTudo: () => cy.get('#reject-button'),
+        btnConfirmarSelecao: () => cy.get('#confirm-button'),
+        btnPergunta1: () => cy.contains('div[data-testid="editor-text"]', 'Posso usar os itens que compro na Loja Web no jogo Praia Bingo?'),
+        btnPergunta2: () => cy.contains('div[data-testid="editor-text"]', 'Quanto tempo demora para liberar no Praia Bingo os itens que comprei aqui na loja? '),
+        btnPergunta3: () => cy.get('[data-testid="faq-card-c1f283aa-d831-4d6f-b96d-e0ae7fda551c"]').contains('Só posso comprar se informar meu ID?'),
+        btnPergunta4: () => cy.get('[data-testid="faq-card-8c5430ba-2494-4c69-ac98-c4eb57a4c662"]').contains('Onde encontro meu ID Praia Bingo?'),
+        btnPergunta5: () => cy.get('[data-testid="faq-card-b783347c-c239-4f36-9436-ba2be763965b"]').contains('Meu ID não está funcionando.'),
+        btnPergunta6: () => cy.get('[data-testid="faq-card-2fbd0ac4-1967-499b-856d-b53cab058c3f"]').contains('Quais são os métodos de pagamento suportados na loja?'),
+        btnPergunta7: () => cy.get('[data-testid="faq-card-c4e5ae77-c8b0-4f2b-a58a-f02350100227"]').contains('Como adicionar e salvar um método de pagamento?'),
+        btnPergunta8: () => cy.get('[data-testid="faq-card-239b43e2-dbb1-42f0-8d2e-10759288fb69"]').contains('Não consigo concluir a compra porque aparece “as informações do cartão de crédito/débito não são válidas".'),
+        btnPergunta9: () => cy.get('[data-testid="faq-card-280a6c3b-e1c8-4471-bc44-79fe99b27646"]').contains('Não vejo meu produto comprado no jogo.'),
+        btnPergunta10: () => cy.get('[data-testid="faq-card-6a5ecef1-3d2e-4ab0-ac2f-68b67d7872f7"]').contains('Comprei itens para a conta de jogo errada.'),
+        btnPergunta11: () => cy.get('[data-testid="faq-card-ccc308b5-5e75-4532-8547-ac11749001d3"]').contains('Recebi menos itens no jogo do que comprei no site. ')
+
 
     }
 
@@ -62,7 +77,6 @@ export class Home {
     }
 
     validarColetaPresente() {
-
         this.elementos.btnColetar().should('be.visible').click()
         this.elementos.mdlVoceRecebeu().should('be.visible')
         this.elementos.btnVoltar().click()
@@ -70,28 +84,24 @@ export class Home {
     }
 
     validarBotaoFichas() {
-
         this.elementos.btnFichas().should('be.visible').click()
         this.elementos.lblFichas().should('be.visible')
 
     }
 
     validarBotaoDindins() {
-
         this.elementos.btnDindins().should('be.visible').click()
         this.elementos.lblDindins().should('be.visible')
 
     }
 
     validarBotaoPequenosPrecos() {
-
         this.elementos.btnPequenosPrecos().should('be.visible').click()
         this.elementos.lblPequenosPrecos().should('be.visible')
 
     }
 
     validarBotaoYoutube() {
-
         cy.get('a.inner-social-media-item')
             .should('have.attr', 'href', 'https://www.youtube.com/@praiabingobrasil')
             .and('have.attr', 'target', '_blank').and('have.attr', 'rel').should('include', 'noopener');
@@ -139,8 +149,9 @@ export class Home {
     }
 
     validarListaCookiesAnaliticos() {
-        cy.get('a.gdpr-settings-content__link svelte-fj6qxk')
-        .should('have.attr', 'href', 'https://xsolla.com/cookie#analytical')
+        cy.get('.gdpr-settings-content__link')
+            .should('have.attr', 'href', 'https://xsolla.com/cookie#analytical');
+
     }
 
     validarCentralPrivacidade() {
@@ -149,11 +160,76 @@ export class Home {
     }
 
     validarErroCupom() {
-
         this.elementos.lblCupomDesconto().should('be.visible').type('11111111')
         this.elementos.btnAplicarDesconto().click()
         this.elementos.lblErroCupom().should('be.visible')
 
     }
 
+    validarCookiesFuncionais() {
+        this.elementos.btnCookiesFuncionais().should('be.visible').click()
+    }
+
+    validarListaCookiesFuncionais() {
+        cy.get('a.gdpr-settings-content__link')
+            .should('have.attr', 'href', 'https://xsolla.com/cookie#functional')
+
+    }
+
+    validarCookiesPersonalizacao() {
+        this.elementos.btnCookiesPersonalizacao().should('be.visible').click()
+    }
+
+    validarListaCookiesPersonalizacao() {
+        cy.get('a.gdpr-settings-content__link')
+            .should('have.attr', 'href', 'https://xsolla.com/cookie#targeting')
+    }
+
+    validarPoliticaCookies() {
+        cy.contains('a.gdpr-settings-footer__link').should('have.attr', 'href', 'https://xsolla.com/cookie?_xm=212542.402170118508904462')
+
+    }
+
+    validarPoliticaPrivacidade() {
+        cy.contains('a.gdpr-settings-footer__link').should('have.attr', 'href', 'https://xsolla.com/privacypolicy?_xm=212542.402170118508904462')
+    }
+
+    validarFecharCentral() {
+        this.elementos.btnFecharCentral().should('be.visible').click()
+        cy.get('[data-testid="copyright"]').should('be.visible')
+    }
+
+    validarRejeitarTudo() {
+        this.elementos.btnRejeitarTudo().should('be.visible').click()
+        cy.get('[data-testid="copyright"]').should('be.visible')
+    }
+
+    validarAceitarTudo() {
+        this.elementos.btnAceitarTudo().should('be.visible').click()
+        cy.get('[data-testid="copyright"]').should('be.visible')
+    }
+
+    validarProgramaAfiliados() {
+        cy.contains('a.affiliate-program-button').should('have.attr', 'href', 'https://influencer.xsolla.com/?utm_source=sitebuilder&utm_medium=footer_affiliate_link&utm_campaign=394398&utm_content=223867&utm_term=212542&_xm=212542.402170118508904462')
+    }
+
+    validarJogueAgora() {
+        cy.contains('a.ui-site-calltoaction').should('have.attr', 'href', 'https://pipastudios.com/deeplinks/classic/?goto=ibiza&_xm=212542.402170118508904462')
+    }
+
+    validarPergunta1(){
+        this.elementos.btnPergunta1().should('be.visible').click()
+        cy.get('[data-testid="editor-text"]').contains('Sim, e apenas no Praia Bingo! Este site serve apenas como uma loja virtual, não sendo possível jogar o Praia Bingo por aqui.')
+    }
+
+    validarPergunta2(){
+         this.elementos.btnPergunta2().should('be.visible').click()
+        cy.get('[data-testid="editor-text"]').contains('Em até 3 minutos depois de ter efetuado a compra, os itens estarão no aplicativo no Praia Bingo em seu celular ou tablet, disponíveis para você curtir. ')
+    }
+
+    validarPergunta3(){
+         this.elementos.btnPergunta3().should('be.visible').click()
+        cy.get('[data-testid="editor-text"]').contains('Sim, seu ID (número de identificação) é o que vai direcionar a compra para seu usuário no jogo.')
+    }
+    
 }
