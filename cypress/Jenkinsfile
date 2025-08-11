@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    stages {
+        stage('Login') {
+            steps {
+                sh 'npx cypress run --spec "cypress/e2e/login.cy.js"'
+            }
+        }
+        stage('Cadastro') {
+            steps {
+                sh 'npx cypress run --spec "cypress/e2e/home.cy.js"'
+            }
+        }
+        stage('Checkout') {
+            steps {
+                sh 'npx cypress run --spec "cypress/e2e/compras.cy.js"'
+            }
+        }
+    }
+}

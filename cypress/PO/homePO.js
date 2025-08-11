@@ -40,7 +40,20 @@ export class Home {
         btnPergunta8: () => cy.get('[data-testid="faq-card-239b43e2-dbb1-42f0-8d2e-10759288fb69"]').contains('Não consigo concluir a compra porque aparece “as informações do cartão de crédito/débito não são válidas".'),
         btnPergunta9: () => cy.get('[data-testid="faq-card-280a6c3b-e1c8-4471-bc44-79fe99b27646"]').contains('Não vejo meu produto comprado no jogo.'),
         btnPergunta10: () => cy.get('[data-testid="faq-card-6a5ecef1-3d2e-4ab0-ac2f-68b67d7872f7"]').contains('Comprei itens para a conta de jogo errada.'),
-        btnPergunta11: () => cy.get('[data-testid="faq-card-ccc308b5-5e75-4532-8547-ac11749001d3"]').contains('Recebi menos itens no jogo do que comprei no site. ')
+        btnPergunta11: () => cy.get('[data-testid="faq-card-ccc308b5-5e75-4532-8547-ac11749001d3"]').contains('Recebi menos itens no jogo do que comprei no site. '),
+        btnOfertaBoasVindas: () => cy.get('#store-buy-button-6759f96d11aa1b73fce3b5db-0-payment_web_cash_1000'),
+        btnOfertaExclusiva: () => cy.get('#store-buy-button-6759f96d11aa1b73fce3b5db-2-payment_web_specialoffer_bundle_2200_30'),
+        btnOfertaEspecial: () => cy.get('#store-buy-button-6759f96d11aa1b73fce3b5db-2-payment_web_specialoffer_bundle_1000_10'),
+        btnFichinhas: () => cy.get('#store-buy-button-675c746a404da3b7d241d469-0-payment_web_bundle_coins_400'),
+        btnDindinzinhos: () => cy.get('#store-buy-button-675c746a404da3b7d241d469-0-payment_web_bundle_cash_20'),
+        btnCombinho: () => cy.get('#store-buy-button-675c746a404da3b7d241d469-0-payment_web_bundle_combo_10_200'),
+        btnOfertaFichas: () => cy.get('#store-buy-button-675c746a404da3b7d241d469-1-payment_web_bundle_coins_1100'),
+        btnMaisFichas: () => cy.get('#store-buy-button-675c746a404da3b7d241d469-1-payment_web_bundle_coins_2200'),
+        btnMonteDeFichas: () => cy.get('#store-buy-button-675c746a404da3b7d241d469-1-payment_web_bundle_coins_4400'),
+        btnOfertaDindins: () => cy.get('#store-buy-button-675c746a404da3b7d241d469-2-payment_web_bundle_cash_55'),
+        btnMaisDindins: () => cy.get('#store-buy-button-675c746a404da3b7d241d469-2-payment_web_bundle_cash_110'),
+        btnMuitosDindins: () => cy.get('#store-buy-button-675c746a404da3b7d241d469-2-payment_web_bundle_cash_220')
+
 
 
     }
@@ -172,7 +185,7 @@ export class Home {
 
     validarListaCookiesFuncionais() {
         cy.get('a.gdpr-settings-content__link')
-            .should('have.attr', 'href', 'https://xsolla.com/cookie#functional')
+            .should('have.attr', 'href', 'https://xsolla.com/cookie?_xm=212542.402170118508904462#functional')
 
     }
 
@@ -205,7 +218,7 @@ export class Home {
     }
 
     validarAceitarTudo() {
-        this.elementos.btnAceitarTudo().should('be.visible').click()
+        this.elementos.btnConfirmarSelecao().should('be.visible').click()
         cy.get('[data-testid="copyright"]').should('be.visible')
     }
 
@@ -278,6 +291,23 @@ export class Home {
             case 'Italiano':
                 cy.get('select.locale-select.locale-select--compact').select('Italiano')
                 cy.get('div[data-testid="section-title"]').contains('Grandi Offerte')
+                break
+        }
+    }
+
+    validarBannerBoasVindas() {
+        this.elementos.btnOfertaBoasVindas().should('be.visible').click()
+    }
+
+    validarOfertasEspeciais(ofertas) {
+        switch (ofertas) {
+            case 'Oferta Exclusiva':
+                this.elementos.btnOfertaExclusiva().should('be.visible').click()
+                cy.get('div.title text-word-break', 'Oferta Exclusiva').should('be.visible')
+                break
+            case 'Oferta Especial':
+                this.elementos.btnOfertaEspecial().should('be.visible').click()
+                cy.get('div.total-text text-word-break', 'Oferta Especial').should('be.visible')
                 break
         }
     }

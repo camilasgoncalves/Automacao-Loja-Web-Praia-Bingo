@@ -28,6 +28,7 @@ describe('Fluxos da Home', () => {
         home.aceitarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
+        home.fecharAdicionarTelaInicio()
         home.validarBotaoFichas()
     })
 
@@ -36,6 +37,7 @@ describe('Fluxos da Home', () => {
         home.aceitarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
+        home.fecharAdicionarTelaInicio()
         home.validarBotaoDindins()
     })
 
@@ -44,6 +46,7 @@ describe('Fluxos da Home', () => {
         home.aceitarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
+        home.fecharAdicionarTelaInicio()
         home.validarBotaoPequenosPrecos()
     })
 
