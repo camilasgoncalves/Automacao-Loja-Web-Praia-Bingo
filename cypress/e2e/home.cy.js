@@ -196,4 +196,15 @@ describe('Fluxos da Home', () => {
         home.validarIdiomas('Espanõl')
         home.validarIdiomas('Italiano')
     })
+
+    it.only('Valida compras em "Ofertas Especiais"', () =>{
+        home.acessarSite()
+        home.aceitarCookiesSeExistirem()
+        home.acessarLogin()
+        login.realizarLogin()
+        home.fecharAdicionarTelaInicio()
+        home.validarOfertasEspeciais('Oferta Exclusiva')
+        home.validarOfertasEspeciais('Oferta Especial')
+    })
+
 })

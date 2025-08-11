@@ -52,7 +52,8 @@ export class Home {
         btnMonteDeFichas: () => cy.get('#store-buy-button-675c746a404da3b7d241d469-1-payment_web_bundle_coins_4400'),
         btnOfertaDindins: () => cy.get('#store-buy-button-675c746a404da3b7d241d469-2-payment_web_bundle_cash_55'),
         btnMaisDindins: () => cy.get('#store-buy-button-675c746a404da3b7d241d469-2-payment_web_bundle_cash_110'),
-        btnMuitosDindins: () => cy.get('#store-buy-button-675c746a404da3b7d241d469-2-payment_web_bundle_cash_220')
+        btnMuitosDindins: () => cy.get('#store-buy-button-675c746a404da3b7d241d469-2-payment_web_bundle_cash_220'),
+        btnXsollaPay: () => cy.get('[data-testid="xsolla-pay-button"]')
 
 
 
@@ -303,11 +304,62 @@ export class Home {
         switch (ofertas) {
             case 'Oferta Exclusiva':
                 this.elementos.btnOfertaExclusiva().should('be.visible').click()
-                cy.get('div.title text-word-break', 'Oferta Exclusiva').should('be.visible')
+                this.elementos.btnXsollaPay().should('be.visible')
                 break
             case 'Oferta Especial':
                 this.elementos.btnOfertaEspecial().should('be.visible').click()
-                cy.get('div.total-text text-word-break', 'Oferta Especial').should('be.visible')
+                this.elementos.btnXsollaPay().should('be.visible')
+                break
+        }
+    }
+
+    validarPequenosPrecos(precos) {
+        switch (precos) {
+            case 'Fichinhas':
+                this.elementos.btnFichinhas().should('be.visible').click()
+                cy.get('div.total-text.text-word-break', 'Fichinhas').should('be.visible')
+                break
+            case 'Dindinzinhos':
+                this.elementos.btnDindinzinhos().should('be.visible')
+                cy.get('div.total-text text-word-break', 'Dindinzinhos').should('be.visible')
+                break
+            case 'Combinho':
+                this.elementos.btnCombinho().should('be.visible')
+                cy.get('div.total-text text-word-break', 'Combinho').should('be.visible')
+                break
+        }
+    }
+
+    validarFichas(fichas) {
+        switch (fichas) {
+            case 'Fichas':
+                this.elementos.btnOfertaFichas().should('be.visible').click()
+                cy.get('div.total-text text-word-break', 'Fichas').should('be.visible')
+                break
+            case 'Mais Fichas!':
+                this.elementos.btnMaisFichas().should('be.visible').click()
+                cy.get('div.total-text text-word-break', 'Mais Fichas!').should('be.visible')
+                break
+            case 'Monte de Fichas':
+                this.elementos.btnMonteDeFichas().should('be.visible').click()
+                cy.get('div.total-text text-word-break', 'Monte de Fichas').should('be.visible')
+                break
+        }
+    }
+
+    validarDindins(dindins) {
+        switch (dindins) {
+            case 'Dindins':
+                this.elementos.btnOfertaDindins().should('be.visible').click()
+                cy.get('div.total-text text-word-break', 'Dindins').should('be.visible')
+                break
+            case 'Mais Dindins!':
+                this.elementos.btnMaisDindins().should('be.visible').click()
+                cy.get('div.total-text text-word-break', 'Mais Dindins!').should('be.visible')
+                break
+            case 'Muitos Dindins':
+                this.elementos.btnMuitosDindins().should('be.visible').click()
+                cy.get('div.total-text text-word-break', 'Muitos Dindins').should('be.visible')
                 break
         }
     }
