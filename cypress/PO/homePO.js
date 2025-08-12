@@ -53,7 +53,8 @@ export class Home {
         btnOfertaDindins: () => cy.get('#store-buy-button-675c746a404da3b7d241d469-2-payment_web_bundle_cash_55'),
         btnMaisDindins: () => cy.get('#store-buy-button-675c746a404da3b7d241d469-2-payment_web_bundle_cash_110'),
         btnMuitosDindins: () => cy.get('#store-buy-button-675c746a404da3b7d241d469-2-payment_web_bundle_cash_220'),
-        btnXsollaPay: () => cy.get('[data-testid="xsolla-pay-button"]')
+        btnXsollaPay: () => cy.get('[data-testid="xsolla-pay-button"]'),
+        lblName: () => cy.get('#x-text-control-input-user_name')
 
 
 
@@ -200,7 +201,7 @@ export class Home {
     }
 
     validarPoliticaCookies() {
-        cy.contains('a.gdpr-settings-footer__link').should('have.attr', 'href', 'https://xsolla.com/cookie?_xm=212542.402170118508904462')
+        cy.contains('a.gdpr-settings-footer__link').should('have.attr', 'href', 'https://xsolla.com/cookie')
 
     }
 
@@ -304,11 +305,17 @@ export class Home {
         switch (ofertas) {
             case 'Oferta Exclusiva':
                 this.elementos.btnOfertaExclusiva().should('be.visible').click()
-                this.elementos.btnXsollaPay().should('be.visible')
+                cy.frameLoaded('iframe.paystation-modal__iframe'); // espera o iframe carregar
+                cy.iframe('iframe.paystation-modal__iframe')
+                    .find('[data-testid="xsolla-pay-button"]')
+                    .should('be.visible');
                 break
             case 'Oferta Especial':
                 this.elementos.btnOfertaEspecial().should('be.visible').click()
-                this.elementos.btnXsollaPay().should('be.visible')
+                cy.frameLoaded('iframe.paystation-modal__iframe'); // espera o iframe carregar
+                cy.iframe('iframe.paystation-modal__iframe')
+                    .find('[data-testid="xsolla-pay-button"]')
+                    .should('be.visible');
                 break
         }
     }

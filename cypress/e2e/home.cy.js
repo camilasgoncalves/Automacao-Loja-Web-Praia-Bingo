@@ -207,4 +207,15 @@ describe('Fluxos da Home', () => {
         home.validarOfertasEspeciais('Oferta Especial')
     })
 
+    it('Validar compras em "Pequenos Preços!"', () =>{
+        home.acessarSite()
+        home.aceitarCookiesSeExistirem()
+        home.acessarLogin()
+        login.realizarLogin()
+        home.fecharAdicionarTelaInicio()
+        home.validarPequenosPrecos('Fichinhas')
+        home.validarPequenosPrecos('Dindinzinhos')
+        home.validarPequenosPrecos('Combinhos')
+    })
+
 })
