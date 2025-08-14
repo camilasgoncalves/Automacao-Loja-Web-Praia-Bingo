@@ -301,4 +301,47 @@ export class Home {
         this.elementos.btnOfertaBoasVindas().should('be.visible').click()
     }
 
+    validarOfertaEspecial() {
+        this.elementos.btnOfertaEspecial().should('be.visible').click()
+    }
+
+    validarOfertaExclusiva() {
+        this.elementos.btnOfertaExclusiva().should('be.visible').click()
+    }
+
+    validarCompraFichinhas() {
+        this.elementos.btnFichinhas().should('be.visible').click()
+    }
+
+    validarComprarDindinzinhos() {
+        this.elementos.btnDindinzinhos().should('be.visible').click()
+    }
+
+    validarComprarCombinho() {
+        this.elementos.btnCombinho().should('be.visible').click()
+    }
+
+    validarComprarFichas(){
+        this.elementos.btnOfertaFichas().should('be.visible').click()
+    }
+
+    validarComprarMaisFichas(){
+        this.elementos.btnMaisFichas().should('be.visible').click()
+    }
+
+    validarComprarMonteDeFichas(){
+        this.elementos.btnMonteDeFichas().should('be.visible').click()
+    }
+
+    validarComprarDindins(){
+        this.elementos.btnOfertaDindins().should('be.visible').click()
+    }
+
+    validarComprarMuitosDindins(){
+        this.elementos.btnMuitosDindins().should('be.visible').click()
+    }
+
+    validarComprarMaisDindins(){
+        this.elementos.btnMaisDindins().should('be.visible').click()
+    }
 }
