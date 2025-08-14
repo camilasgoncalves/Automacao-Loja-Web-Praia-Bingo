@@ -1,12 +1,18 @@
-export class Compras{
+export class Compras {
 
-elementos = {
+    elementos = {
 
-    lblOfertaBoasVindas: () => cy.contains('div.title.text-word-break', 'Oferta de boas-vindas'),
-}
+        lblOfertaBoasVindas: () => cy.contains('div.title.text-word-break', 'Oferta de boas-vindas'),
+    }
 
-validarOfertaBoasVindas(){
-    this.elementos.lblOfertaBoasVindas().should('be.visible')
-}
+    validarOfertaBoasVindas() {
+        this.elementos.lblOfertaBoasVindas().should('be.visible')
+        cy.frameLoaded('#meuIframe')
+        cy.iframe('#meuIframe')
+            .find('button#confirmar')
+            .should('be.visible')
+            .click();
+
+    }
 
 }
