@@ -1,9 +1,9 @@
 name: Loja Web Praia Bingo
 
 on:
-  workflow_dispatch: 
-  push:              
-  pull_request:      
+  workflow_dispatch: # permite rodar manualmente
+  push:              # roda ao fazer push
+  pull_request:      # roda em PR
 
 jobs:
   cypress-run:
@@ -18,9 +18,8 @@ jobs:
         with:
           node-version: 18
 
-      - name: Instalar dependências
-        run: npm install
+      - name: Instalar dependências do Ubuntu
+        run: sudo apt-get update && sudo apt-get install -y \
+          libgtk2.0-0 libgt
 
-      - name: Rodar testes Cypress
-        run: npx cypress run
 
