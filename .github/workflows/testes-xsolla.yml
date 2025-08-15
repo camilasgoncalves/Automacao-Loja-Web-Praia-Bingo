@@ -5,6 +5,8 @@ on:
   push: # roda ao fazer push
   pull_request: # roda em PR
 
+run-name: Testes do Xsolla (Banners de Compra)  - Loja Web Praia Bingo
+
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
@@ -35,5 +37,5 @@ jobs:
       - name: Instalar dependências do projeto
         run: npm ci
 
-      - name: Rodar teste específico do Cypress
+      - name: Rodar testes do Xsolla - Banners de Compras
         run: xvfb-run -a npx cypress run --spec "cypress/e2e/xsolla.cy.js"

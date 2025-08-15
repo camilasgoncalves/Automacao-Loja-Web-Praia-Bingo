@@ -108,7 +108,7 @@ describe('Fluxos da Home', () => {
 
     })
 
-    it.only('Valida Cookies Funcionais e Lista em Central de Preferência de Privacidade', () => {
+    it('Valida Cookies Funcionais e Lista em Central de Preferência de Privacidade', () => {
         home.acessarSite()
         home.aceitarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
