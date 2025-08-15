@@ -66,12 +66,13 @@ export class Home {
 
 
     aceitarCookiesSeExistirem() {
-        cy.get('button').invoke('text').then($el => {
-            if ($el.includes('Aceitar tudo')) {
-                this.elementos.btnAceitarTudo().click()
-            }
-        })
-    }
+            cy.get('button').invoke('text').then($el => {
+                if ($el.includes('Aceitar tudo')) {
+                    this.elementos.btnAceitarTudo().click()
+                }
+            })
+        }
+
 
     fecharAdicionarTelaInicio() {
         cy.get('[data-testid="pwa-close-icon"] svg path')
@@ -321,27 +322,27 @@ export class Home {
         this.elementos.btnCombinho().should('be.visible').click()
     }
 
-    validarComprarFichas(){
+    validarComprarFichas() {
         this.elementos.btnOfertaFichas().should('be.visible').click()
     }
 
-    validarComprarMaisFichas(){
+    validarComprarMaisFichas() {
         this.elementos.btnMaisFichas().should('be.visible').click()
     }
 
-    validarComprarMonteDeFichas(){
+    validarComprarMonteDeFichas() {
         this.elementos.btnMonteDeFichas().should('be.visible').click()
     }
 
-    validarComprarDindins(){
+    validarComprarDindins() {
         this.elementos.btnOfertaDindins().should('be.visible').click()
     }
 
-    validarComprarMuitosDindins(){
+    validarComprarMuitosDindins() {
         this.elementos.btnMuitosDindins().should('be.visible').click()
     }
 
-    validarComprarMaisDindins(){
+    validarComprarMaisDindins() {
         this.elementos.btnMaisDindins().should('be.visible').click()
     }
 }
