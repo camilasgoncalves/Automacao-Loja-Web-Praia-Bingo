@@ -16,6 +16,8 @@ A automação cobre cenários críticos da loja, como:
 - [Cypress](https://www.cypress.io/) – Framework principal para testes E2E;
 - JavaScript ou TypeScript;
 - Node.js + npm ou yarn.
+- Mocha → define a estrutura e organização dos testes (describe, it, before, after, etc.).
+- Chai → fornece os métodos de asserção (expect, should, assert).
 
 ## 🚀 Como executar os testes
 

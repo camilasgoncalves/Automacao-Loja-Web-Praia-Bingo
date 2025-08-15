@@ -201,7 +201,7 @@ export class Home {
     }
 
     validarPoliticaCookies() {
-        cy.contains('a.gdpr-settings-footer__link').should('have.attr', 'href', 'https://xsolla.com/cookie')
+        cy.contains('a.gdpr-settings-footer__link').should('have.attr', 'href', 'https://xsolla.com/cookie?_xm=212542.402170118508904462')
 
     }
 

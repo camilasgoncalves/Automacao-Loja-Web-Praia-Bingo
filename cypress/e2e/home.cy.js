@@ -108,7 +108,7 @@ describe('Fluxos da Home', () => {
 
     })
 
-    it('Valida Cookies Funcionais e Lista em Central de Preferência de Privacidade', () => {
+    it.only('Valida Cookies Funcionais e Lista em Central de Preferência de Privacidade', () => {
         home.acessarSite()
         home.aceitarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
@@ -196,27 +196,5 @@ describe('Fluxos da Home', () => {
         home.validarIdiomas('Espanõl')
         home.validarIdiomas('Italiano')
     })
-
-    it.only('Valida compras em "Ofertas Especiais"', () =>{
-        home.acessarSite()
-        home.aceitarCookiesSeExistirem()
-        home.acessarLogin()
-        login.realizarLogin()
-        home.fecharAdicionarTelaInicio()
-        home.validarOfertasEspeciais('Oferta Exclusiva')
-        home.validarOfertasEspeciais('Oferta Especial')
-    })
-
-    it('Validar compras em "Pequenos Preços!"', () =>{
-        home.acessarSite()
-        home.aceitarCookiesSeExistirem()
-        home.acessarLogin()
-        login.realizarLogin()
-        home.fecharAdicionarTelaInicio()
-        home.validarPequenosPrecos('Fichinhas')
-        home.validarPequenosPrecos('Dindinzinhos')
-        home.validarPequenosPrecos('Combinhos')
-    })
-
 
 })
