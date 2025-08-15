@@ -19,7 +19,6 @@ jobs:
           node-version: 18
 
       - name: Instalar dependências do Ubuntu
-        run: sudo apt-get update && sudo apt-get install -y \
-          libgtk2.0-0 libgt
+        run: sudo apt-get update && sudo apt-get install -y \libgtk2.0-0 libgt
 
 
