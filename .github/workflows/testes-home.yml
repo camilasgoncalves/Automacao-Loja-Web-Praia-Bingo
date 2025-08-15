@@ -1,4 +1,4 @@
-name: Loja Web Praia Bingo
+name: Loja Web Praia Bingo - Testes da Home
 
 on:
   workflow_dispatch: # permite rodar manualmente
@@ -35,6 +35,5 @@ jobs:
       - name: Instalar dependências do projeto
         run: npm ci
 
-      - name: Rodar testes E2E com Cypress
-        run: npx cypress run
-
+      - name: Rodar teste específico do Cypress
+        run: xvfb-run -a npx cypress run --spec "cypress/e2e/home.cy.js"

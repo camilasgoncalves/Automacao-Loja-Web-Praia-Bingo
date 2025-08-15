@@ -1,0 +1,39 @@
+name: Loja Web Praia Bingo - Testes da Xsolla - Banners de Compras
+
+on:
+  workflow_dispatch: # permite rodar manualmente
+  push: # roda ao fazer push
+  pull_request: # roda em PR
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar código
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Instalar dependências do Ubuntu
+        run: |
+          sudo apt-get update
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y \
+          libgtk2.0-0 \
+          libgtk-3-0 \
+          libnotify-dev \
+          libnss3 \
+          libxss1 \
+          libasound2t64 \
+          libxtst6 \
+          xauth \
+          xvfb
+
+      - name: Instalar dependências do projeto
+        run: npm ci
+
+      - name: Rodar teste específico do Cypress
+        run: xvfb-run -a npx cypress run --spec "cypress/e2e/xsolla.cy.js"
