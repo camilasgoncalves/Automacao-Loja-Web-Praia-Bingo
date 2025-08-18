@@ -66,20 +66,31 @@ export class Home {
 
 
     aceitarCookiesSeExistirem() {
-            cy.get('button').invoke('text').then($el => {
-                if ($el.includes('Aceitar tudo')) {
-                    this.elementos.btnAceitarTudo().click({force: true})
-                }
-            })
-        }
+        cy.get('.gdpr-container.svelte-lqj36j').invoke('text').then($el => {
+            if ($el.includes('Aceitar tudo')) {
+                this.elementos.btnAceitarTudo().click({ force: true })
+            } else {
+                cy.log('Banner de Cookies não está presente, seguindo com os testes')
+            }
+
+        })
+    }
 
     /*aceitarCookiesSeExistirem() {
-            cy.get('.gdpr-buttons svelte-1ux32dr').invoke('text').then($el => {
-                if ($el.includes('Aceitar tudo')) {
-                    this.elementos.btnAceitarTudo().click({force: true})
-                }
-            })
-        }*/
+        cy.document().then(doc => {
+            const banner = doc.querySelector('.gdpr-container.svelte-lqj36j')
+            if (banner) {
+                cy.wrap(banner).invoke('text').then(text => {
+                    if (text.includes('Aceitar tudo')) {
+                        this.elementos.btnAceitarTudo().click({ force: true })
+                    }
+                })
+            } else {
+                cy.log('Banner de cookies não está presente')
+            }
+        })
+    }*/
+
 
 
     fecharAdicionarTelaInicio() {
