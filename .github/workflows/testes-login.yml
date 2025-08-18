@@ -48,8 +48,8 @@ jobs:
     
       - name: Gerar relatório HTML
         run: |
-          npx mochawesome-merge cypress/reports/mochawesome/*.json > cypress/reports/mochawesome.json
-          npx marge cypress/reports/mochawesome.json -f report -o cypress/reports
+          npx mochawesome-merge cypress/reports/mochawesome/*.json > cypress/reports/mochawesome/mochawesome.json
+          npx marge cypress/reports/mochawesome/mochawesome.json -f report -o cypress/reports/mochawesome
 
       - name: Listar arquivos do relatório
         run: ls -R cypress/reports || echo "Relatório não encontrado"

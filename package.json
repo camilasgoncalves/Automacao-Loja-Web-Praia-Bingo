@@ -6,8 +6,8 @@
   "scripts": {
     "test": "cypress run",
     "cy:run": "cypress run --reporter junit --reporter-options mochaFile=cypress/results/results-[hash].xml",
-    "merge-reports": "mochawesome-merge cypress/reports/mochawesome/*.json > cypress/reports/report.json",
-    "generate-report": "marge cypress/reports/report.json -f report -o cypress/reports/mochawesome"
+    "merge-reports": "mochawesome-merge cypress/reports/mochawesome/*.json > cypress/reports/mochawesome/mochawesome.json",
+    "generate-report": "marge cypress/reports/mochawesome/mochawesome.json -f report -o cypress/reports/mochawesome"
   },
   "keywords": [],
   "author": "",
