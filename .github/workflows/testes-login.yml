@@ -41,7 +41,7 @@ jobs:
         run: echo "TERM=xterm" >> $GITHUB_ENV
 
       - name: Rodar testes da Home
-        run: xvfb-run -a npx cypress run --spec "cypress/e2e/home.cy.js"
+        run: xvfb-run -a npx cypress run --spec "cypress/e2e/login.cy.js"
 
       - name: Listar arquivos do relatório
         run: ls -R cypress/reports || echo "Relatório não encontrado"
