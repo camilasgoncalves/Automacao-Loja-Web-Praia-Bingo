@@ -41,7 +41,6 @@ jobs:
         run: echo "TERM=xterm" >> $GITHUB_ENV
 
       - name: Rodar testes de Login
-        continue-on-error: true
         run: xvfb-run -a npx cypress run --spec "cypress/e2e/login.cy.js"
 
       - name: Gerar relatório mochawesome
