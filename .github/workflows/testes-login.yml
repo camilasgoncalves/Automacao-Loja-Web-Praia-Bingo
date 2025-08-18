@@ -45,7 +45,7 @@ jobs:
 
       - name: Gerar relatório HTML
         run: |
-          npx marge cypress/reports/report.json -f report -o cypress/reports/mochawesome
+          npx marge cypress/reports/report.json -f report -o cypress/reports
 
       - name: Listar arquivos do relatório
         run: ls -R cypress/reports || echo "Relatório não encontrado"
@@ -54,4 +54,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: mochawesome-report
-          path: cypress/reports/mochawesome
+          path: cypress/reports
