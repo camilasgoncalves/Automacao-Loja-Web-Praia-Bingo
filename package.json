@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test": "cypress run",
-    "cy:run": "cypress run --reporter junit --reporter-options mochaFile=cypress/results/results-[hash].xml"
   },
   "keywords": [],
   "author": "",

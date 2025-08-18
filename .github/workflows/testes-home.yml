@@ -42,9 +42,3 @@ jobs:
 
       - name: Rodar testes da Home
         run: xvfb-run -a npx cypress run --spec "cypress/e2e/home.cy.js"
-
-      - name: Upload de screenshots (se houver)
-        uses: actions/upload-artifact@v4
-        with:
-          name: cypress-screenshots
-          path: cypress/screenshots
