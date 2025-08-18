@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "cypress run",
+    "cy:run": "cypress run --reporter junit --reporter-options mochaFile=cypress/results/results-[hash].xml",
+    "merge-reports": "mochawesome-merge cypress/reports/*.json > cypress/reports/report.json",
     "generate-report": "marge cypress/reports/report.json -f report -o cypress/reports/html"
   },
   "keywords": [],
@@ -14,7 +16,6 @@
   "devDependencies": {
     "cypress": "^14.5.3",
     "cypress-iframe": "^1.0.1",
-    "cypress-mochawesome-reporter": "^4.0.0",
     "mochawesome": "^7.1.3",
     "mochawesome-merge": "^5.0.0",
     "mochawesome-report-generator": "^6.2.0"
