@@ -4,11 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run",
-    "cy:run": "cypress run --reporter junit --reporter-options mochaFile=cypress/results/results-[hash].xml",
-    "merge-reports": "mochawesome-merge cypress/reports/*.json > cypress/reports/report.json",
-    "generate-report": "marge cypress/reports/report.json -f report -o cypress/reports/html"
-  },
+  "test": "cypress run",
+  "merge-reports": "mkdir -p cypress/reports && mochawesome-merge cypress/reports/mochawesome/*.json > cypress/reports/report.json",
+  "generate-report": "marge cypress/reports/report.json -f report -o cypress/reports/html"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
