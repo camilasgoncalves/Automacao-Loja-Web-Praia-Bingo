@@ -40,12 +40,16 @@ jobs:
       - name: Definir TERM
         run: echo "TERM=xterm" >> $GITHUB_ENV
 
+      - name: Garantir que a pasta do relatório existe
+        run: mkdir -p cypress/reports/mochawesome
+
       - name: Rodar testes da Home
         run: xvfb-run -a npx cypress run --spec "cypress/e2e/login.cy.js"
-
+    
       - name: Gerar relatório HTML
         run: |
-          npx marge cypress/reports/report.json -f report -o cypress/reports
+          npx mochawesome-merge cypress/reports/mochawesome/*.json > cypress/reports/mochawesome.json
+          npx marge cypress/reports/mochawesome.json -f report -o cypress/reports
 
       - name: Listar arquivos do relatório
         run: ls -R cypress/reports || echo "Relatório não encontrado"
@@ -54,4 +58,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: mochawesome-report
-          path: cypress/reports
+          path: cypress/reports/mochawesome
+
+      - name: Upload de screenshots (se houver)
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots

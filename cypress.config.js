@@ -3,7 +3,7 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
   reporter: "cypress-mochawesome-reporter",
   reporterOptions: {
-    reportDir: "cypress/reports",
+    reportDir: "cypress/reports/mochawesome",
     overwrite: false,
     html: true,
     json: true,
@@ -14,10 +14,10 @@ module.exports = defineConfig({
     responseTimeout: 15000,
     defaultCommandTimeout: 15000,
     setupNodeEvents(on, config) {
-
+     
       require("cypress-mochawesome-reporter/plugin")(on)
 
-
+    
       on("task", {
         log(message) {
           console.log(message)
