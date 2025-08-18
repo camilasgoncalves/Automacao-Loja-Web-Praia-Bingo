@@ -8,6 +8,7 @@ describe('Fluxo de Login', () => {
 
     it('Realiza login com sucesso', () => {
         home.acessarSite()
+        home.aceitarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
 
@@ -17,6 +18,7 @@ describe('Fluxo de Login', () => {
 
     it('Realiza login com erro', () => {
         home.acessarSite()
+        home.aceitarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLoginInvalido()
 
@@ -26,6 +28,7 @@ describe('Fluxo de Login', () => {
 
     it('Não consegue encontrar o ID', () => {
         home.acessarSite()
+        home.aceitarCookiesSeExistirem()
         home.acessarLogin()
         login.naoEncontraID()
 
@@ -33,6 +36,7 @@ describe('Fluxo de Login', () => {
 
     it('Realiza logout com sucesso', () => {
         home.acessarSite()
+        home.aceitarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
         home.elementos.lblUser().should('be.visible').click()
