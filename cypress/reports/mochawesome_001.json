@@ -1,0 +1,167 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 3,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-08-15T17:37:13.546Z",
+    "end": "2025-08-15T17:37:30.992Z",
+    "duration": 17446,
+    "testsRegistered": 4,
+    "passPercent": 75,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0f7b78fa-bbd7-410d-bc50-d1908f684df5",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login.cy.js",
+      "file": "cypress\\e2e\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9a3e57b6-d5e2-4bdb-a30b-1d16987d0d6f",
+          "title": "Fluxo de Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Realiza login com sucesso",
+              "fullTitle": "Fluxo de Login Realiza login com sucesso",
+              "timedOut": null,
+              "duration": 4225,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "home.acessarSite();\nhome.acessarLogin();\nlogin.realizarLogin();\nhome.elementos.lblUser().should('be.visible');\ncy.log('Login realizado com sucesso');",
+              "err": {},
+              "uuid": "bfdd2479-009c-4f7c-a5c2-cde3ff0da6fd",
+              "parentUUID": "9a3e57b6-d5e2-4bdb-a30b-1d16987d0d6f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Realiza login com erro",
+              "fullTitle": "Fluxo de Login Realiza login com erro",
+              "timedOut": null,
+              "duration": 5877,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "home.acessarSite();\nhome.acessarLogin();\nlogin.realizarLoginInvalido();\nlogin.elementos.lblErroLogin().should('be.visible');\ncy.log('Login não realizado');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<input#user-id-input.ui-site-input__input.user-id-modal__input>' to be 'visible'\n\nThis element `<input#user-id-input.ui-site-input__input.user-id-modal__input>` is not visible because its parent `<div.user-id-modal__container>` has CSS property: `display: none`",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<input#user-id-input.ui-site-input__input.user-id-modal__input>' to be 'visible'\n\nThis element `<input#user-id-input.ui-site-input__input.user-id-modal__input>` is not visible because its parent `<div.user-id-modal__container>` has CSS property: `display: none`\n    at Login.realizarLoginInvalido (webpack://praia-bingo/./cypress/PO/loginPO.js:19:31)\n    at Context.eval (webpack://praia-bingo/./cypress/e2e/login.cy.js:21:14)",
+                "diff": null
+              },
+              "uuid": "c4c492bd-3cff-405d-b041-6a2c15c61caf",
+              "parentUUID": "9a3e57b6-d5e2-4bdb-a30b-1d16987d0d6f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Não consegue encontrar o ID",
+              "fullTitle": "Fluxo de Login Não consegue encontrar o ID",
+              "timedOut": null,
+              "duration": 1605,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "home.acessarSite();\nhome.acessarLogin();\nlogin.naoEncontraID();",
+              "err": {},
+              "uuid": "e54301ee-9a28-434e-b2be-1d99f90c22ef",
+              "parentUUID": "9a3e57b6-d5e2-4bdb-a30b-1d16987d0d6f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Realiza logout com sucesso",
+              "fullTitle": "Fluxo de Login Realiza logout com sucesso",
+              "timedOut": null,
+              "duration": 2750,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "home.acessarSite();\nhome.acessarLogin();\nlogin.realizarLogin();\nhome.elementos.lblUser().should('be.visible').click();\nhome.logOut();\nhome.elementos.btnAcessar().should('be.visible');",
+              "err": {},
+              "uuid": "8163bb7d-cc3c-4565-ba39-0133481e7e6e",
+              "parentUUID": "9a3e57b6-d5e2-4bdb-a30b-1d16987d0d6f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bfdd2479-009c-4f7c-a5c2-cde3ff0da6fd",
+            "e54301ee-9a28-434e-b2be-1d99f90c22ef",
+            "8163bb7d-cc3c-4565-ba39-0133481e7e6e"
+          ],
+          "failures": [
+            "c4c492bd-3cff-405d-b041-6a2c15c61caf"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 14457,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

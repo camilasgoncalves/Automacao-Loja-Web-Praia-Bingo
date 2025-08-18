@@ -37,6 +37,9 @@ jobs:
       - name: Instalar dependências do projeto
         run: npm ci
 
+      - name: Definir TERM
+        run: echo "TERM=xterm" >> $GITHUB_ENV
+
       - name: Rodar testes do Xsolla - Banners de Compras
         run: xvfb-run -a npx cypress run --spec "cypress/e2e/xsolla.cy.js"
 

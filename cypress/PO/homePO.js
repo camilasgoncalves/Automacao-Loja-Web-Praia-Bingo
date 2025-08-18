@@ -68,7 +68,15 @@ export class Home {
     aceitarCookiesSeExistirem() {
             cy.get('button').invoke('text').then($el => {
                 if ($el.includes('Aceitar tudo')) {
-                    this.elementos.btnAceitarTudo().click()
+                    this.elementos.btnAceitarTudo().click({force: true})
+                }
+            })
+        }
+
+    aceitarCookiesSeExistirem() {
+            cy.get('.gdpr-buttons svelte-1ux32dr').invoke('text').then($el => {
+                if ($el.includes('Aceitar tudo')) {
+                    this.elementos.btnAceitarTudo().click({force: true})
                 }
             })
         }
