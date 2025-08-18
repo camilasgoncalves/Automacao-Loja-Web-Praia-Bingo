@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "cypress run",
-    "merge-reports": "mkdir -p cypress/reports && mochawesome-merge cypress/reports/mochawesome/*.json > cypress/reports/report.json",
+    "merge-reports": "mkdir -p cypress/reports && mochawesome-merge cypress/reports/mochawesome/*.json > cypress/reports/report.json && mochawesome-report-generator cypress/reports/report.json",
     "generate-report": "marge cypress/reports/report.json -f report -o cypress/reports/html"
   },
   "keywords": [],
