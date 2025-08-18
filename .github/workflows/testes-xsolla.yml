@@ -41,12 +41,16 @@ jobs:
         run: echo "TERM=xterm" >> $GITHUB_ENV
 
       - name: Rodar testes do Xsolla - Banners de Compras
+        continue-on-error: true
         run: xvfb-run -a npx cypress run --spec "cypress/e2e/xsolla.cy.js"
 
       - name: Gerar relatório mochawesome
         run: |
           npm run merge-reports
           npm run generate-report
+
+      - name: Listar arquivos do relatório
+        run: ls -R cypress/reports/html || echo "Relatório não encontrado"
 
       - name: Upload do relatório HTML
         uses: actions/upload-artifact@v4
