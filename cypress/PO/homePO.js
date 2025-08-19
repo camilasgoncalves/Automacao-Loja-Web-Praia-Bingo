@@ -70,7 +70,14 @@ export class Home {
         cy.get('button').invoke('text').then($el => {
             if ($el.includes('Aceitar tudo')) {
                 this.elementos.btnAceitarTudo().should('be.visible').click({ force: true })
-            } 
+            } else {
+                cy.get('button').invoke('text').then($el => {
+                    if ($el.includes('Dispensar')){
+                        cy.contains('Dispensar').should('be.visible').click()
+                    }
+                })
+                
+            }
         })
     }
 
