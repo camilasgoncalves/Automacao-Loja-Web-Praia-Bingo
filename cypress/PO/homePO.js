@@ -55,7 +55,8 @@ export class Home {
         btnMuitosDindins: () => cy.get('#store-buy-button-675c746a404da3b7d241d469-2-payment_web_bundle_cash_220'),
         btnXsollaPay: () => cy.get('[data-testid="xsolla-pay-button"]'),
         lblName: () => cy.get('#x-text-control-input-user_name'),
-        btnDispensar: () => cy.get('#reject-button').contains('Dispensar')
+        btnDispensar: () => cy.get('button[data-action="close-banner"]')
+
 
 
 
