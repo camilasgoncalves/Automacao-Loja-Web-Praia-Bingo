@@ -75,6 +75,16 @@ export class Home {
         })
     }
 
+    log(){
+        cy.get('*').each(($el, index) => {
+    cy.wrap($el).invoke('text').then(text => {
+        if (text.trim()) {
+            cy.log(`Elemento ${index}: ${$el.prop('tagName')} - ${text.trim()}`)
+        }
+    })
+})
+    }
+
     dispensarCookiesSeExistirem() {
         cy.wait(5000)
         cy.get('button').invoke('text').then($el => {

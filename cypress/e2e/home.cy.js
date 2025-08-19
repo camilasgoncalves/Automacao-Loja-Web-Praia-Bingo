@@ -8,7 +8,7 @@ describe('Fluxos da Home', () => {
 
     it('Validar coleta de Presente', () => {
         home.acessarSite()
-       // home.aceitarCookiesSeExistirem()
+        // home.aceitarCookiesSeExistirem()
         home.dispensarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
@@ -27,7 +27,7 @@ describe('Fluxos da Home', () => {
 
     it('Validar botão "Fichas"', () => {
         home.acessarSite()
-       // home.aceitarCookiesSeExistirem()
+        // home.aceitarCookiesSeExistirem()
         home.dispensarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
@@ -37,7 +37,7 @@ describe('Fluxos da Home', () => {
 
     it('Validar botão "Dindins"', () => {
         home.acessarSite()
-       // home.aceitarCookiesSeExistirem()
+        // home.aceitarCookiesSeExistirem()
         home.dispensarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
@@ -97,7 +97,8 @@ describe('Fluxos da Home', () => {
 
     it('Valida Cookies Essenciais e Lista em Central de Preferência de Privacidade', () => {
         home.acessarSite()
-       // home.aceitarCookiesSeExistirem()
+        // home.aceitarCookiesSeExistirem()
+        home.log()
         home.dispensarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
         home.validarCentralPrivacidade()
@@ -108,7 +109,7 @@ describe('Fluxos da Home', () => {
 
     it('Valida Cookies Analíticos e Lista em Central de Preferência de Privacidade', () => {
         home.acessarSite()
-       // home.aceitarCookiesSeExistirem()
+        // home.aceitarCookiesSeExistirem()
         home.dispensarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
         home.validarCentralPrivacidade()
