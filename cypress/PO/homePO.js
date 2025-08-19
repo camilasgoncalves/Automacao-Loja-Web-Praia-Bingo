@@ -66,10 +66,10 @@ export class Home {
 
 
     aceitarCookiesSeExistirem() {
-        cy.wait(2000)
+        cy.wait(5000)
         cy.get('button').invoke('text').then($el => {
             if ($el.includes('Aceitar tudo')) {
-                this.elementos.btnAceitarTudo().click({ force: true })
+                this.elementos.btnAceitarTudo().should('be.visible').click({ force: true })
             } 
         })
     }
