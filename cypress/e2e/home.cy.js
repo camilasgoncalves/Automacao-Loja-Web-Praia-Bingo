@@ -6,94 +6,94 @@ describe('Fluxos da Home', () => {
     const login = new Login()
     const home = new Home()
 
-    // it('Validar coleta de Presente', () => {
-    //     home.acessarSite()
-    //     // home.aceitarCookiesSeExistirem()
-    //     home.dispensarCookiesSeExistirem()
-    //     home.acessarLogin()
-    //     login.realizarLogin()
-    //     home.validarColetaPresente()
-    //     home.elementos.lblUser().should('be.visible')
-    // })
+    it('Validar coleta de Presente', () => {
+        home.acessarSite()
+        // home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
+        home.acessarLogin()
+        login.realizarLogin()
+        home.validarColetaPresente()
+        home.elementos.lblUser().should('be.visible')
+    })
 
-    // it('Validar presente já coletado', () => {
-    //     home.acessarSite()
-    //     //home.aceitarCookiesSeExistirem()
-    //     home.dispensarCookiesSeExistirem()
-    //     home.acessarLogin()
-    //     login.realizarLogin()
-    //     home.elementos.btnColetado().should('be.visible')
-    // })
+    it('Validar presente já coletado', () => {
+        home.acessarSite()
+        //home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
+        home.acessarLogin()
+        login.realizarLogin()
+        home.elementos.btnColetado().should('be.visible')
+    })
 
-    // it('Validar botão "Fichas"', () => {
-    //     home.acessarSite()
-    //     // home.aceitarCookiesSeExistirem()
-    //     home.dispensarCookiesSeExistirem()
-    //     home.acessarLogin()
-    //     login.realizarLogin()
-    //     home.fecharAdicionarTelaInicio()
-    //     home.validarBotaoFichas()
-    // })
+    it('Validar botão "Fichas"', () => {
+        home.acessarSite()
+        // home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
+        home.acessarLogin()
+        login.realizarLogin()
+        home.fecharAdicionarTelaInicio()
+        home.validarBotaoFichas()
+    })
 
-    // it('Validar botão "Dindins"', () => {
-    //     home.acessarSite()
-    //     // home.aceitarCookiesSeExistirem()
-    //     home.dispensarCookiesSeExistirem()
-    //     home.acessarLogin()
-    //     login.realizarLogin()
-    //     home.fecharAdicionarTelaInicio()
-    //     home.validarBotaoDindins()
-    // })
+    it('Validar botão "Dindins"', () => {
+        home.acessarSite()
+        // home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
+        home.acessarLogin()
+        login.realizarLogin()
+        home.fecharAdicionarTelaInicio()
+        home.validarBotaoDindins()
+    })
 
-    // it('Validar botão "Pequenos Preços"', () => {
-    //     home.acessarSite()
-    //     //home.aceitarCookiesSeExistirem()
-    //     home.dispensarCookiesSeExistirem()
-    //     home.acessarLogin()
-    //     login.realizarLogin()
-    //     home.fecharAdicionarTelaInicio()
-    //     home.validarBotaoPequenosPrecos()
-    // })
+    it('Validar botão "Pequenos Preços"', () => {
+        home.acessarSite()
+        //home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
+        home.acessarLogin()
+        login.realizarLogin()
+        home.fecharAdicionarTelaInicio()
+        home.validarBotaoPequenosPrecos()
+    })
 
-    // it('Validar redirecionamento para Youtube', () => {
-    //     home.acessarSite()
-    //     home.aceitarCookiesSeExistirem()
-    //     home.validarBotaoYoutube()
-    // })
+    it('Validar redirecionamento para Youtube', () => {
+        home.acessarSite()
+        home.aceitarCookiesSeExistirem()
+        home.validarBotaoYoutube()
+    })
 
-    // it('Validar redirecionamento para Instagram', () => {
-    //     home.acessarSite()
-    //     home.aceitarCookiesSeExistirem()
-    //     home.validarBotaoInstagram()
-    // })
+    it('Validar redirecionamento para Instagram', () => {
+        home.acessarSite()
+        home.aceitarCookiesSeExistirem()
+        home.validarBotaoInstagram()
+    })
 
-    // it('Validar redirecionamento para Facebook', () => {
-    //     home.acessarSite()
-    //     home.aceitarCookiesSeExistirem()
-    //     home.validarBotaoFacebook()
-    // })
+    it('Validar redirecionamento para Facebook', () => {
+        home.acessarSite()
+        home.aceitarCookiesSeExistirem()
+        home.validarBotaoFacebook()
+    })
 
-    // it('Validar redirecionamento para Google Play', () => {
-    //     home.acessarSite()
-    //     home.aceitarCookiesSeExistirem()
-    //     home.validarBotaoGooglePlay()
-    // })
+    it('Validar redirecionamento para Google Play', () => {
+        home.acessarSite()
+        home.aceitarCookiesSeExistirem()
+        home.validarBotaoGooglePlay()
+    })
 
-    // it('Validar redirecionamento para App Store', () => {
-    //     home.acessarSite()
-    //     home.aceitarCookiesSeExistirem()
-    //     home.validarBotaoAppStore
-    // })
+    it('Validar redirecionamento para App Store', () => {
+        home.acessarSite()
+        home.aceitarCookiesSeExistirem()
+        home.validarBotaoAppStore
+    })
 
-    // it('Erro ao inserir Cupom de Desconto', () => {
-    //     home.acessarSite()
-    //     //home.aceitarCookiesSeExistirem()
-    //     home.dispensarCookiesSeExistirem()
-    //     home.acessarLogin()
-    //     login.realizarLogin()
-    //     home.fecharAdicionarTelaInicio()
-    //     home.validarErroCupom()
-    // })
+    it('Erro ao inserir Cupom de Desconto', () => {
+        home.acessarSite()
+        //home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
+        home.acessarLogin()
+        login.realizarLogin()
+        home.fecharAdicionarTelaInicio()
+        home.validarErroCupom()
+    })
 
     it('Valida Cookies Essenciais e Lista em Central de Preferência de Privacidade', () => {
         home.acessarSite()
@@ -142,7 +142,7 @@ describe('Fluxos da Home', () => {
     it('Valida Política de Cookies em Central de Preferência e Privacidade', () => {
         home.acessarSite()
         //home.aceitarCookiesSeExistirem()
-        home.dispensarCookiesSeExistirem()
+        home.dispensarCookies()
         home.fecharAdicionarTelaInicio()
         home.validarCentralPrivacidade()
         home.validarPoliticaCookies()
@@ -160,7 +160,7 @@ describe('Fluxos da Home', () => {
     it('Valida botão Fechar em Central de Preferência e Privacidade', () => {
         home.acessarSite()
         //home.aceitarCookiesSeExistirem()
-        home.dispensarCookiesSeExistirem()
+        home.dispensarCookies()
         home.fecharAdicionarTelaInicio()
         home.validarCentralPrivacidade()
         home.validarFecharCentral()

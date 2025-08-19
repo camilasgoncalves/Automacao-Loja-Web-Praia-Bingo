@@ -55,7 +55,8 @@ export class Home {
         btnMuitosDindins: () => cy.get('#store-buy-button-675c746a404da3b7d241d469-2-payment_web_bundle_cash_220'),
         btnXsollaPay: () => cy.get('[data-testid="xsolla-pay-button"]'),
         lblName: () => cy.get('#x-text-control-input-user_name'),
-        btnDispensar: () => cy.get('button[data-action="close-banner"]')
+        btnFecharCookies: () => cy.get('button[data-action="close-banner"]'),
+        btnDispensar: () => cy.get('#reject-button').contains('Dispensar')
 
 
 
@@ -77,15 +78,22 @@ export class Home {
     }
 
     dispensarCookiesSeExistirem() {
+        cy.wait(5000)
         cy.get('button').invoke('text').then($el => {
-            cy.wait(2000)
             $el.includes('Aceitar tudo') ? this.elementos.btnAceitarTudo().click({ force: true }) : undefined
-            cy.wait(2000)
-            cy.get('button').invoke('text').then($el => {
-                cy.task('log', "TEXTO ENCONTRADO: " + $el)
-                $el.includes('Dispensar') || $el.includes('Rejeitar tudo') ? this.elementos.btnDispensar().click({ force: true }) : undefined
-            })
+            $el.includes('Dispensar') ? this.elementos.btnDispensar().click({ force: true }) : undefined
         })
+    }
+
+    dispensarCookies(){
+        cy.wait(3000)
+        cy.get('[data-action="reject-all"]')
+            .invoke('attr', 'clip-rule')
+            .then(clipRule => {
+                if (clipRule && clipRule.includes('evenodd')) {
+                    this.elementos.btnFecharCookies().click();
+                }
+            })
     }
 
     fecharAdicionarTelaInicio() {
