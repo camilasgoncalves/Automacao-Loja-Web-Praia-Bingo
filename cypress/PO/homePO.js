@@ -80,6 +80,9 @@ export class Home {
             $el.includes('Aceitar tudo') ? this.elementos.btnAceitarTudo().click({ force: true }) : undefined
             $el.includes('Dispensar') ? cy.contains('Dispensar').click({ force: true }) : undefined
         })
+        cy.get('.meu-container').invoke('prop', 'outerHTML').then(html => {
+            console.log('CAMILA + ' + html)
+        })
 
     }
 
