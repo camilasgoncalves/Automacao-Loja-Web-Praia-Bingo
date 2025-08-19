@@ -54,7 +54,8 @@ export class Home {
         btnMaisDindins: () => cy.get('#store-buy-button-675c746a404da3b7d241d469-2-payment_web_bundle_cash_110'),
         btnMuitosDindins: () => cy.get('#store-buy-button-675c746a404da3b7d241d469-2-payment_web_bundle_cash_220'),
         btnXsollaPay: () => cy.get('[data-testid="xsolla-pay-button"]'),
-        lblName: () => cy.get('#x-text-control-input-user_name')
+        lblName: () => cy.get('#x-text-control-input-user_name'),
+        btnDispensar: () => cy.get('#dismiss-button')
 
 
 
@@ -78,13 +79,9 @@ export class Home {
         cy.wait(5000)
         cy.get('button').invoke('text').then($el => {
             $el.includes('Aceitar tudo') ? this.elementos.btnAceitarTudo().click({ force: true }) : undefined
-            $el.includes('Dispensar') ? cy.contains('Dispensar').click({ force: true }) : undefined
+            $el.includes('Dispensar') ? this.elementos.btnDispensar().click({ force: true }) : undefined
         })
-        cy.get('.meu-container').invoke('prop', 'outerHTML').then(html => {
-            console.log('CAMILA + ' + html)
-        })
-
-    }
+        }
 
     fecharAdicionarTelaInicio() {
         cy.get('[data-testid="pwa-close-icon"] svg path')
