@@ -83,6 +83,7 @@ export class Home {
             cy.wait(2000)
             cy.get('button').invoke('text').then($el => {
                 cy.task('log', "ENTROUUUU AQUIII")
+                cy.task('log', "TEXTO ENCONTRADO: " + $el)
                 $el.includes('Dispensar') ? this.elementos.btnDispensar().click({ force: true }) : undefined
             })
         })
