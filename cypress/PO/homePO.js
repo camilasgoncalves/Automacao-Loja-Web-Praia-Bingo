@@ -20,7 +20,7 @@ export class Home {
         btnInformacoesGerais: () => cy.contains('button', 'Informações gerais'),
         btnCookiesEssenciais: () => cy.contains('button', 'Cookies essenciais'),
         btnCookiesAnaliticos: () => cy.contains('button', 'Cookies analíticos e de desempenho'),
-        btnCookiesFuncionais: () => cy.contains('button', 'Cookies funcionais'),
+        btnCookiesFuncionais: () => cy.get('label[data-action="give-functional-consent"]'),
         btnCookiesPersonalizacao: () => cy.contains('button', 'Cookies de personalização'),
         btnAceitarTudo: () => cy.get('#accept-button'),
         lblCupomDesconto: () => cy.get('input[placeholder="Digite o código aqui"]'),
@@ -75,14 +75,8 @@ export class Home {
         })
     }
 
-    log(){
-        cy.get('*').each(($el, index) => {
-    cy.wrap($el).invoke('text').then(text => {
-        if (text.trim()) {
-            cy.log(`Elemento ${index}: ${$el.prop('tagName')} - ${text.trim()}`)
-        }
-    })
-})
+    log() {
+        cy.get('body').invoke('html').then($val => { cy.task('log', JSON.stringify($val)) })
     }
 
     dispensarCookiesSeExistirem() {
@@ -91,7 +85,7 @@ export class Home {
             $el.includes('Aceitar tudo') ? this.elementos.btnAceitarTudo().click({ force: true }) : undefined
             $el.includes('Dispensar') ? cy.contains('button', 'Dispensar').click({ force: true }) : undefined
         })
-        }
+    }
 
     fecharAdicionarTelaInicio() {
         cy.get('[data-testid="pwa-close-icon"] svg path')
@@ -202,12 +196,12 @@ export class Home {
     }
 
     validarCookiesFuncionais() {
-        this.elementos.btnCookiesFuncionais().should('be.visible').click()
+        this.elementos.btnCookiesFuncionais().should('be.visible').click({ force: true })
     }
 
     validarListaCookiesFuncionais() {
         cy.get('a.gdpr-settings-content__link')
-            .should('have.attr', 'href', 'https://xsolla.com/cookie?_xm=212542.402170118508904462#functional')
+            .should('have.attr', 'href', 'https://xsolla.com/cookie#functional')
 
     }
 
@@ -221,7 +215,7 @@ export class Home {
     }
 
     validarPoliticaCookies() {
-        cy.contains('a.gdpr-settings-footer__link').should('have.attr', 'href', 'https://xsolla.com/cookie?_xm=212542.402170118508904462')
+        cy.get('a.gdpr-settings-footer__link').should('have.attr', 'href', 'https://xsolla.com/cookie').and('contain', 'Política de Cookies')
 
     }
 

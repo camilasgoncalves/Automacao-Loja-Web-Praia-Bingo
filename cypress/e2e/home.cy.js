@@ -124,7 +124,7 @@ describe('Fluxos da Home', () => {
         home.dispensarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
         home.validarCentralPrivacidade()
-        home.validarListaCookiesFuncionais()
+        home.validarCookiesFuncionais()
         home.validarListaCookiesFuncionais()
 
     })
