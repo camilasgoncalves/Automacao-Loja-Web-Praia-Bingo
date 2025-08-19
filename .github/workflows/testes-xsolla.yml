@@ -37,6 +37,9 @@ jobs:
       - name: Instalar dependências do projeto
         run: npm ci
 
+      - name: Install system dependencies
+        run: sudo apt-get install -y libatk-bridge2.0-0 libgtk-3-0 libxss1 ...
+
       - name: Definir TERM
         run: echo "TERM=xterm" >> $GITHUB_ENV
 
