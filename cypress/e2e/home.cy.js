@@ -8,7 +8,7 @@ describe('Fluxos da Home', () => {
 
     it('Validar coleta de Presente', () => {
         home.acessarSite()
-        home.aceitarCookiesSeExistirem()
+       // home.aceitarCookiesSeExistirem()
         home.dispensarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
@@ -18,7 +18,7 @@ describe('Fluxos da Home', () => {
 
     it('Validar presente já coletado', () => {
         home.acessarSite()
-        home.aceitarCookiesSeExistirem()
+        //home.aceitarCookiesSeExistirem()
         home.dispensarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
@@ -27,7 +27,7 @@ describe('Fluxos da Home', () => {
 
     it('Validar botão "Fichas"', () => {
         home.acessarSite()
-        home.aceitarCookiesSeExistirem()
+       // home.aceitarCookiesSeExistirem()
         home.dispensarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
@@ -37,7 +37,7 @@ describe('Fluxos da Home', () => {
 
     it('Validar botão "Dindins"', () => {
         home.acessarSite()
-        home.aceitarCookiesSeExistirem()
+       // home.aceitarCookiesSeExistirem()
         home.dispensarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
@@ -47,7 +47,7 @@ describe('Fluxos da Home', () => {
 
     it('Validar botão "Pequenos Preços"', () => {
         home.acessarSite()
-        home.aceitarCookiesSeExistirem()
+        //home.aceitarCookiesSeExistirem()
         home.dispensarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
@@ -87,7 +87,7 @@ describe('Fluxos da Home', () => {
 
     it('Erro ao inserir Cupom de Desconto', () => {
         home.acessarSite()
-        home.aceitarCookiesSeExistirem()
+        //home.aceitarCookiesSeExistirem()
         home.dispensarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
@@ -97,7 +97,7 @@ describe('Fluxos da Home', () => {
 
     it('Valida Cookies Essenciais e Lista em Central de Preferência de Privacidade', () => {
         home.acessarSite()
-        home.aceitarCookiesSeExistirem()
+       // home.aceitarCookiesSeExistirem()
         home.dispensarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
         home.validarCentralPrivacidade()
@@ -108,7 +108,7 @@ describe('Fluxos da Home', () => {
 
     it('Valida Cookies Analíticos e Lista em Central de Preferência de Privacidade', () => {
         home.acessarSite()
-        home.aceitarCookiesSeExistirem()
+       // home.aceitarCookiesSeExistirem()
         home.dispensarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
         home.validarCentralPrivacidade()
@@ -119,7 +119,7 @@ describe('Fluxos da Home', () => {
 
     it('Valida Cookies Funcionais e Lista em Central de Preferência de Privacidade', () => {
         home.acessarSite()
-        home.aceitarCookiesSeExistirem()
+        //home.aceitarCookiesSeExistirem()
         home.dispensarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
         home.validarCentralPrivacidade()
@@ -130,7 +130,7 @@ describe('Fluxos da Home', () => {
 
     it('Valida Cookies de Personalização e Lista em Central de Preferência de Privacidade', () => {
         home.acessarSite()
-        home.aceitarCookiesSeExistirem()
+        //home.aceitarCookiesSeExistirem()
         home.dispensarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
         home.validarCentralPrivacidade()
@@ -141,7 +141,7 @@ describe('Fluxos da Home', () => {
 
     it('Valida Política de Cookies em Central de Preferência e Privacidade', () => {
         home.acessarSite()
-        home.aceitarCookiesSeExistirem()
+        //home.aceitarCookiesSeExistirem()
         home.dispensarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
         home.validarCentralPrivacidade()
@@ -150,7 +150,7 @@ describe('Fluxos da Home', () => {
 
     it('Valida Política de Privacidade em Central de Preferência e Privacidade', () => {
         home.acessarSite()
-        home.aceitarCookiesSeExistirem()
+        //home.aceitarCookiesSeExistirem()
         home.dispensarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
         home.validarCentralPrivacidade()
@@ -159,7 +159,7 @@ describe('Fluxos da Home', () => {
 
     it('Valida botão Fechar em Central de Preferência e Privacidade', () => {
         home.acessarSite()
-        home.aceitarCookiesSeExistirem()
+        //home.aceitarCookiesSeExistirem()
         home.dispensarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
         home.validarCentralPrivacidade()
@@ -169,7 +169,7 @@ describe('Fluxos da Home', () => {
 
     it('Valida botão Aceitar Tudo em Central de Preferência e Privacidade', () => {
         home.acessarSite()
-        home.aceitarCookiesSeExistirem()
+        //home.aceitarCookiesSeExistirem()
         home.dispensarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
         home.validarCentralPrivacidade()
@@ -179,7 +179,7 @@ describe('Fluxos da Home', () => {
 
     it('Valida botão Rejeitar Tudo em Central de Preferência e Privacidade', () => {
         home.acessarSite()
-        home.aceitarCookiesSeExistirem()
+        //home.aceitarCookiesSeExistirem()
         home.dispensarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
         home.validarCentralPrivacidade()
@@ -189,7 +189,7 @@ describe('Fluxos da Home', () => {
 
     it('Valida perguntas em Precisa de Ajuda?', () => {
         home.acessarSite()
-        home.aceitarCookiesSeExistirem()
+        //home.aceitarCookiesSeExistirem()
         home.dispensarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
         home.validarPerguntar('Posso usar os itens que compro na Loja Web no jogo Praia Bingo?')
@@ -207,7 +207,7 @@ describe('Fluxos da Home', () => {
 
     it('Valida Idiomas', () => {
         home.acessarSite()
-        home.aceitarCookiesSeExistirem()
+        //home.aceitarCookiesSeExistirem()
         home.dispensarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
         home.validarIdiomas('English')

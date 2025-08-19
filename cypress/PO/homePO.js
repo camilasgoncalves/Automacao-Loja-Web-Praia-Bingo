@@ -77,10 +77,10 @@ export class Home {
     dispensarCookiesSeExistirem() {
         cy.wait(5000)
         cy.get('button').invoke('text').then($el => {
-            if ($el.includes('Dispensar')) {
-                cy.contains('Dispensar').should('be.visible').click({ force: true })
-            }
+            $el.includes('Aceitar tudo') ? this.elementos.btnAceitarTudo().click({ force: true }) : undefined
+            $el.includes('Dispensar') ? cy.contains('Dispensar').click({ force: true }) : undefined
         })
+
     }
 
     fecharAdicionarTelaInicio() {
@@ -90,7 +90,6 @@ export class Home {
                 if (clipRule && clipRule.includes('evenodd')) {
                     this.elementos.btnFechar().click();
                 }
-                cy.screenshot('depois de tudo', { capture: 'viewport' })
             })
     }
 

@@ -11,7 +11,8 @@ const home = new Home()
 it('Validar Oferta de Boas Vindas', () =>{
 
         home.acessarSite()
-        home.aceitarCookiesSeExistirem()
+        //home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
         home.fecharAdicionarTelaInicio()
@@ -23,7 +24,8 @@ it('Validar Oferta de Boas Vindas', () =>{
 it('Validar Oferta Especial', () =>{
 
         home.acessarSite()
-        home.aceitarCookiesSeExistirem()
+        //home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
         home.fecharAdicionarTelaInicio()
@@ -34,7 +36,8 @@ it('Validar Oferta Especial', () =>{
 it('Validar item Fichinhas em Pequenos Preços!', () =>{
 
         home.acessarSite()
-        home.aceitarCookiesSeExistirem()
+        //home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
         home.fecharAdicionarTelaInicio()
@@ -46,7 +49,8 @@ it('Validar item Fichinhas em Pequenos Preços!', () =>{
 it('Validar item Dindinzinhos em Pequenos Preços!', () =>{
 
         home.acessarSite()
-        home.aceitarCookiesSeExistirem()
+        //home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
         home.fecharAdicionarTelaInicio()
@@ -57,7 +61,8 @@ it('Validar item Dindinzinhos em Pequenos Preços!', () =>{
 it('Validar item Combinho em Pequenos Preços!', () =>{
 
         home.acessarSite()
-        home.aceitarCookiesSeExistirem()
+       // home.aceitarCookiesSeExistirem()
+       home.dispensarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
         home.fecharAdicionarTelaInicio()
@@ -69,7 +74,8 @@ it('Validar item Combinho em Pequenos Preços!', () =>{
 it('Validar item Fichas em Fichas', () =>{
 
         home.acessarSite()
-        home.aceitarCookiesSeExistirem()
+        //home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
         home.fecharAdicionarTelaInicio()
@@ -81,7 +87,8 @@ it('Validar item Fichas em Fichas', () =>{
 it('Validar item Mais Fichas em Fichas', () =>{
 
         home.acessarSite()
-        home.aceitarCookiesSeExistirem()
+        //home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
         home.fecharAdicionarTelaInicio()
@@ -93,7 +100,8 @@ it('Validar item Mais Fichas em Fichas', () =>{
 it('Validar item Mais Fichas em Fichas', () =>{
 
         home.acessarSite()
-        home.aceitarCookiesSeExistirem()
+        //home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
         home.fecharAdicionarTelaInicio()
@@ -105,7 +113,8 @@ it('Validar item Mais Fichas em Fichas', () =>{
 it('Validar item Dindins em Dindins', () =>{
 
         home.acessarSite()
-        home.aceitarCookiesSeExistirem()
+        //home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
         home.fecharAdicionarTelaInicio()
@@ -117,7 +126,8 @@ it('Validar item Dindins em Dindins', () =>{
 it('Validar item Mais Dindins! em Dindins', () =>{
 
         home.acessarSite()
-        home.aceitarCookiesSeExistirem()
+        //home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
         home.fecharAdicionarTelaInicio()
@@ -129,7 +139,8 @@ it('Validar item Mais Dindins! em Dindins', () =>{
 it('Validar item Muitos Dindins em Dindins', () =>{
 
         home.acessarSite()
-        home.aceitarCookiesSeExistirem()
+        //home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
         home.fecharAdicionarTelaInicio()
