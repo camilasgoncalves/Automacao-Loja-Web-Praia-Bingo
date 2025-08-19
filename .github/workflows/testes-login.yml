@@ -24,21 +24,15 @@ jobs:
         run: |
           sudo apt-get update
           sudo DEBIAN_FRONTEND=noninteractive apt-get install -y \
-          libatk-bridge2.0-0 \
+          libgtk2.0-0 \
           libgtk-3-0 \
+          libnotify-dev \
+          libnss3 \
           libxss1 \
           libasound2t64 \
-          libnss3 \
-          libx11-xcb1 \
-          libdrm2 \
-          libxcomposite1 \
-          libxdamage1 \
-          libxrandr2 \
-          libgbm1 \
-          libpango-1.0-0 \
-          libpangocairo-1.0-0 \
-          libcups2 \
-          libxshmfence1
+          libxtst6 \
+          xauth \
+          xvfb
 
       - name: Instalar dependências do projeto
         run: npm ci
@@ -50,4 +44,4 @@ jobs:
         run: echo "TERM=xterm" >> $GITHUB_ENV
 
       - name: Rodar testes da Home
-        run: xvfb-run -a npx cypress run --spec "cypress/e2e/login.cy.js"
+        run: npx cypress run --browser electron --spec "cypress/e2e/login.cy.js"
