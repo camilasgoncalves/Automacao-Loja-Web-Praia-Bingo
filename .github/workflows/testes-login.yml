@@ -37,11 +37,29 @@ jobs:
       - name: Instalar dependências do projeto
         run: npm ci
 
-      - name: Install system dependencies
-        run: sudo apt-get install -y libatk-bridge2.0-0 libgtk-3-0 libxss1 ...
-
       - name: Definir TERM
         run: echo "TERM=xterm" >> $GITHUB_ENV
 
       - name: Rodar testes da Home
         run: npx cypress run --browser electron --spec "cypress/e2e/login.cy.js"
+
+      - name: Upload screenshots
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+
+      - name: Upload videos
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-videos
+          path: cypress/videos
+
+      - name: Upload relatório
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-report
+          path: cypress/reports
