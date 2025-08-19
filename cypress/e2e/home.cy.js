@@ -9,6 +9,7 @@ describe('Fluxos da Home', () => {
     it('Validar coleta de Presente', () => {
         home.acessarSite()
         home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
         home.validarColetaPresente()
@@ -18,6 +19,7 @@ describe('Fluxos da Home', () => {
     it('Validar presente já coletado', () => {
         home.acessarSite()
         home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
         home.elementos.btnColetado().should('be.visible')
@@ -26,6 +28,7 @@ describe('Fluxos da Home', () => {
     it('Validar botão "Fichas"', () => {
         home.acessarSite()
         home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
         home.fecharAdicionarTelaInicio()
@@ -35,6 +38,7 @@ describe('Fluxos da Home', () => {
     it('Validar botão "Dindins"', () => {
         home.acessarSite()
         home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
         home.fecharAdicionarTelaInicio()
@@ -44,6 +48,7 @@ describe('Fluxos da Home', () => {
     it('Validar botão "Pequenos Preços"', () => {
         home.acessarSite()
         home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
         home.fecharAdicionarTelaInicio()
@@ -82,6 +87,8 @@ describe('Fluxos da Home', () => {
 
     it('Erro ao inserir Cupom de Desconto', () => {
         home.acessarSite()
+        home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
         home.acessarLogin()
         login.realizarLogin()
         home.fecharAdicionarTelaInicio()
@@ -91,6 +98,7 @@ describe('Fluxos da Home', () => {
     it('Valida Cookies Essenciais e Lista em Central de Preferência de Privacidade', () => {
         home.acessarSite()
         home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
         home.validarCentralPrivacidade()
         home.validarCookiesEssenciais()
@@ -101,6 +109,7 @@ describe('Fluxos da Home', () => {
     it('Valida Cookies Analíticos e Lista em Central de Preferência de Privacidade', () => {
         home.acessarSite()
         home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
         home.validarCentralPrivacidade()
         home.validarCookiesAnaliticos()
@@ -111,6 +120,7 @@ describe('Fluxos da Home', () => {
     it('Valida Cookies Funcionais e Lista em Central de Preferência de Privacidade', () => {
         home.acessarSite()
         home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
         home.validarCentralPrivacidade()
         home.validarListaCookiesFuncionais()
@@ -121,6 +131,7 @@ describe('Fluxos da Home', () => {
     it('Valida Cookies de Personalização e Lista em Central de Preferência de Privacidade', () => {
         home.acessarSite()
         home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
         home.validarCentralPrivacidade()
         home.validarCookiesPersonalizacao()
@@ -131,6 +142,7 @@ describe('Fluxos da Home', () => {
     it('Valida Política de Cookies em Central de Preferência e Privacidade', () => {
         home.acessarSite()
         home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
         home.validarCentralPrivacidade()
         home.validarPoliticaCookies()
@@ -139,6 +151,7 @@ describe('Fluxos da Home', () => {
     it('Valida Política de Privacidade em Central de Preferência e Privacidade', () => {
         home.acessarSite()
         home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
         home.validarCentralPrivacidade()
         home.validarPoliticaPrivacidade
@@ -147,6 +160,7 @@ describe('Fluxos da Home', () => {
     it('Valida botão Fechar em Central de Preferência e Privacidade', () => {
         home.acessarSite()
         home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
         home.validarCentralPrivacidade()
         home.validarFecharCentral()
@@ -156,6 +170,7 @@ describe('Fluxos da Home', () => {
     it('Valida botão Aceitar Tudo em Central de Preferência e Privacidade', () => {
         home.acessarSite()
         home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
         home.validarCentralPrivacidade()
         home.validarAceitarTudo()
@@ -165,6 +180,7 @@ describe('Fluxos da Home', () => {
     it('Valida botão Rejeitar Tudo em Central de Preferência e Privacidade', () => {
         home.acessarSite()
         home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
         home.validarCentralPrivacidade()
         home.validarRejeitarTudo()
@@ -174,6 +190,7 @@ describe('Fluxos da Home', () => {
     it('Valida perguntas em Precisa de Ajuda?', () => {
         home.acessarSite()
         home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
         home.validarPerguntar('Posso usar os itens que compro na Loja Web no jogo Praia Bingo?')
         home.validarPerguntar('Quanto tempo demora para liberar no Praia Bingo os itens que comprei aqui na loja?')
@@ -191,6 +208,7 @@ describe('Fluxos da Home', () => {
     it('Valida Idiomas', () => {
         home.acessarSite()
         home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
         home.validarIdiomas('English')
         home.validarIdiomas('Espanõl')

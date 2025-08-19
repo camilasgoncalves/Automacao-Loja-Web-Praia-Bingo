@@ -70,13 +70,15 @@ export class Home {
         cy.get('button').invoke('text').then($el => {
             if ($el.includes('Aceitar tudo')) {
                 this.elementos.btnAceitarTudo().should('be.visible').click({ force: true })
-            } else {
-                cy.get('button').invoke('text').then($el => {
-                    if ($el.includes('Dispensar')){
-                        cy.contains('Dispensar').should('be.visible').click()
-                    }
-                })
-                
+            }
+        })
+    }
+
+    dispensarCookiesSeExistirem() {
+        cy.wait(5000)
+        cy.get('button').invoke('text').then($el => {
+            if ($el.includes('Dispensar')) {
+                cy.contains('Dispensar').should('be.visible').click({ force: true })
             }
         })
     }
@@ -88,7 +90,7 @@ export class Home {
                 if (clipRule && clipRule.includes('evenodd')) {
                     this.elementos.btnFechar().click();
                 }
-                 cy.screenshot('depois de tudo', { capture: 'viewport' })
+                cy.screenshot('depois de tudo', { capture: 'viewport' })
             })
     }
 
