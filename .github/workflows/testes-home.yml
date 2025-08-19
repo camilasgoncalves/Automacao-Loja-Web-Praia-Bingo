@@ -41,7 +41,7 @@ jobs:
         run: echo "TERM=xterm" >> $GITHUB_ENV
 
       - name: Rodar testes da Home
-        run: npx cypress run --browser chrome --spec "cypress/e2e/home.cy.js"
+        run: npx cypress run --browser electron --spec "cypress/e2e/home.cy.js"
 
       - name: Upload screenshots
         if: failure()
