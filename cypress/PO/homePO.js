@@ -77,13 +77,14 @@ export class Home {
     }
 
     dispensarCookiesSeExistirem() {
-        cy.wait(5000)
         cy.get('button').invoke('text').then($el => {
+            cy.wait(2000)
             $el.includes('Aceitar tudo') ? this.elementos.btnAceitarTudo().click({ force: true }) : undefined
-        })
-        cy.wait(5000)
-        cy.get('button').invoke('text').then($el => {
-            $el.includes('Dispensar') ? this.elementos.btnDispensar().click({ force: true }) : undefined
+            cy.wait(2000)
+            cy.get('button').invoke('text').then($el => {
+                cy.task('log', "ENTROUUUU AQUIII")
+                $el.includes('Dispensar') ? this.elementos.btnDispensar().click({ force: true }) : undefined
+            })
         })
     }
 
