@@ -98,7 +98,6 @@ describe('Fluxos da Home', () => {
     it('Valida Cookies Essenciais e Lista em Central de Preferência de Privacidade', () => {
         home.acessarSite()
         // home.aceitarCookiesSeExistirem()
-        home.log()
         home.dispensarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
         home.validarCentralPrivacidade()

@@ -75,14 +75,12 @@ export class Home {
         })
     }
 
-    log() {
-        cy.get('body').invoke('html').then($val => { cy.task('log', JSON.stringify($val)) })
-    }
-
     dispensarCookiesSeExistirem() {
         cy.wait(5000)
         cy.get('button').invoke('text').then($el => {
             $el.includes('Aceitar tudo') ? this.elementos.btnAceitarTudo().click({ force: true }) : undefined
+            cy.wait(4000)
+            cy.get('body').invoke('html').then($val => { cy.task('log', JSON.stringify($val)) })
             $el.includes('Dispensar') ? cy.contains('button', 'Dispensar').click({ force: true }) : undefined
         })
     }
