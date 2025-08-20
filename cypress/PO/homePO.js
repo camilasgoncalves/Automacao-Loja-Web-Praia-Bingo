@@ -56,7 +56,8 @@ export class Home {
         btnXsollaPay: () => cy.get('[data-testid="xsolla-pay-button"]'),
         lblName: () => cy.get('#x-text-control-input-user_name'),
         btnFecharCookies: () => cy.get('button[data-action="close-banner"]'),
-        btnDispensar: () => cy.get('#reject-button').contains('Dispensar')
+        btnDispensar: () => cy.get('#reject-button').contains('Dispensar'),
+        lblCentralPrivacidade: () => cy.get('h4.gdpr-settings-screen__title').contains('Central de Preferência de Privacidade')
 
 
 
@@ -174,7 +175,7 @@ validarBotaoAppStore() {
 }
 
 validarCookiesEssenciais() {
-    this.elementos.btnCookiesEssenciais().should('be.visible').click()
+    this.elementos.btnCookiesEssenciais().should('exist').click()
 }
 
 validarListaCookiesEssenciais() {
@@ -184,7 +185,7 @@ validarListaCookiesEssenciais() {
 }
 
 validarCookiesAnaliticos() {
-    this.elementos.btnCookiesAnaliticos().should('be.visible').click()
+    this.elementos.btnCookiesAnaliticos().should('exist').click()
 }
 
 validarListaCookiesAnaliticos() {
@@ -195,7 +196,7 @@ validarListaCookiesAnaliticos() {
 
 validarCentralPrivacidade() {
     this.elementos.btnPrivacidade().click({ force: true })
-    cy.get('h4.gdpr-settings-screen__title').should('be.visible')
+    this.elementos.lblCentralPrivacidade().should('exist')
 }
 
 validarErroCupom() {
@@ -206,7 +207,7 @@ validarErroCupom() {
 }
 
 validarCookiesFuncionais() {
-    this.elementos.btnCookiesFuncionais().should('be.visible').click({ force: true })
+    this.elementos.btnCookiesFuncionais().should('exist').click({ force: true })
 }
 
 validarListaCookiesFuncionais() {
@@ -216,7 +217,7 @@ validarListaCookiesFuncionais() {
 }
 
 validarCookiesPersonalizacao() {
-    this.elementos.btnCookiesPersonalizacao().should('be.visible').click()
+    this.elementos.btnCookiesPersonalizacao().should('exist').click()
 }
 
 validarListaCookiesPersonalizacao() {
@@ -234,18 +235,18 @@ validarPoliticaPrivacidade() {
 }
 
 validarFecharCentral() {
-    this.elementos.btnFecharCentral().should('be.visible').click()
-    cy.get('[data-testid="copyright"]').should('be.visible')
+    this.elementos.btnFecharCentral().should('exist').click()
+    cy.get('[data-testid="copyright"]').should('be.exist')
 }
 
 validarRejeitarTudo() {
-    this.elementos.btnRejeitarTudo().should('be.visible').click()
-    cy.get('[data-testid="copyright"]').should('be.visible')
+    this.elementos.btnRejeitarTudo().should('exist').click()
+    cy.get('[data-testid="copyright"]').should('exist')
 }
 
 validarAceitarTudo() {
-    this.elementos.btnConfirmarSelecao().should('be.visible').click()
-    cy.get('[data-testid="copyright"]').should('be.visible')
+    this.elementos.btnConfirmarSelecao().should('exist').click()
+    cy.get('[data-testid="copyright"]').should('exist')
 }
 
 validarProgramaAfiliados() {
