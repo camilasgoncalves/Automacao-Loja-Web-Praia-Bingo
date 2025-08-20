@@ -89,7 +89,7 @@ export class Home {
         if (tentativas === 0) return
 
         cy.get('button').invoke('text').then($el => {
-            if ($el.find('Dispensar').length > 0) {
+            if ( $el.includes('Dispensar')) {
                 this.elementos.btnDispensar().click({ force: true })
                 this.tentarFecharBanner(tentativas - 1)
             }
