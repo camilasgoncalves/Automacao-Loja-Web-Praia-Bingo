@@ -222,7 +222,7 @@ describe('Fluxos da Home', () => {
         home.validarProgramaAfiliados()
     })
 
-    it.only('Valida redirecionamento do banner Novo Jogo', () => {
+    it('Valida redirecionamento do banner Novo Jogo', () => {
         home.acessarSite()
         home.dispensarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
