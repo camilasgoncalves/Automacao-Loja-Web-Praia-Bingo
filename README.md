@@ -18,6 +18,7 @@ A automação cobre cenários críticos da loja, como:
 - Node.js + npm ou yarn.
 - Mocha → define a estrutura e organização dos testes (describe, it, before, after, etc.).
 - Chai → fornece os métodos de asserção (expect, should, assert).
+- Mochawesome → Reports das execuções com vídeos e screenshots
 
 ## 🚀 Como executar os testes
 
