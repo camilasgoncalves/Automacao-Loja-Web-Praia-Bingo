@@ -215,4 +215,18 @@ describe('Fluxos da Home', () => {
         home.validarIdiomas('Italiano')
     })
 
+    it('Valida redirecionamento de Programa de Afiliados', () => {
+        home.acessarSite()
+        home.dispensarCookiesSeExistirem()
+        home.fecharAdicionarTelaInicio()
+        home.validarProgramaAfiliados()
+    })
+
+    it.only('Valida redirecionamento do banner Novo Jogo', () => {
+        home.acessarSite()
+        home.dispensarCookiesSeExistirem()
+        home.fecharAdicionarTelaInicio()
+        home.validarJogueAgora()
+    }) 
+
 })

@@ -248,11 +248,11 @@ export class Home {
     }
 
     validarProgramaAfiliados() {
-        cy.contains('a.affiliate-program-button').should('have.attr', 'href', 'https://influencer.xsolla.com/?utm_source=sitebuilder&utm_medium=footer_affiliate_link&utm_campaign=394398&utm_content=223867&utm_term=212542&_xm=212542.402170118508904462')
+        cy.get('a.affiliate-program-button').should('have.attr', 'href', 'https://influencer.xsolla.com/api/programs/show?merchant=394398&project=223867&utm_source=sitebuilder&utm_medium=footer_affiliate_link&utm_campaign=394398&utm_content=223867&utm_term=212542')
     }
 
     validarJogueAgora() {
-        cy.contains('a.ui-site-calltoaction').should('have.attr', 'href', 'https://pipastudios.com/deeplinks/classic/?goto=ibiza&_xm=212542.402170118508904462')
+        cy.get('a.ui-site-calltoaction').should('have.attr', 'href', 'https://pipastudios.com/deeplinks/classic/?goto=ibiza')
     }
 
     validarPerguntar(pergunta) {
