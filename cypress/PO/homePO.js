@@ -85,6 +85,15 @@ export class Home {
         })
     }
 
+       dispensarCookies() {
+        cy.wait(5000)
+        cy.get('button').invoke('text').then($el => {
+            if ($el.includes('Dispensar')) {
+                this.elementos.btnDispensar().should('be.visible').click({ force: true })
+            }
+        })
+    }
+
     fecharAdicionarTelaInicio() {
         cy.get('[data-testid="pwa-close-icon"] svg path')
             .invoke('attr', 'clip-rule')
