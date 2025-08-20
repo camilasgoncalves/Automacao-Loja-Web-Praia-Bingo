@@ -10,7 +10,7 @@ export class Login{
 
     realizarLogin(){
         
-        this.elementos.lblId().should('be.visible').type('GOSP2293')
+        this.elementos.lblId().should('be.visible').type('XQAP7233')
         this.elementos.btnAcessar().click()
     }
 
