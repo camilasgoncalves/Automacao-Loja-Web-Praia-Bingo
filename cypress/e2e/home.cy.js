@@ -95,27 +95,27 @@ describe('Fluxos da Home', () => {
         home.validarErroCupom()
     })
 
-    // it('Valida Cookies Essenciais e Lista em Central de Preferência de Privacidade', () => {
-    //     home.acessarSite()
-    //     // home.aceitarCookiesSeExistirem()
-    //     home.dispensarCookiesSeExistirem()
-    //     home.fecharAdicionarTelaInicio()
-    //     home.validarCentralPrivacidade()
-    //     home.validarCookiesEssenciais()
-    //     home.validarListaCookiesEssenciais()
+    it('Valida Cookies Essenciais e Lista em Central de Preferência de Privacidade', () => {
+        home.acessarSite()
+        // home.aceitarCookiesSeExistirem()
+        home.dispensarCookiesSeExistirem()
+        home.fecharAdicionarTelaInicio()
+        home.validarCentralPrivacidade()
+        home.validarCookiesEssenciais()
+        home.validarListaCookiesEssenciais()
 
-    // })
+    })
 
-    // it('Valida Cookies Analíticos e Lista em Central de Preferência de Privacidade', () => {
-    //     home.acessarSite()
-    //     // home.aceitarCookiesSeExistirem()
-    //     home.tentarFecharBanner()
-    //     home.fecharAdicionarTelaInicio()
-    //     home.validarCentralPrivacidade()
-    //     home.validarCookiesAnaliticos()
-    //     home.validarListaCookiesAnaliticos()
+    it('Valida Cookies Analíticos e Lista em Central de Preferência de Privacidade', () => {
+        home.acessarSite()
+        // home.aceitarCookiesSeExistirem()
+        home.tentarFecharBanner()
+        home.fecharAdicionarTelaInicio()
+        home.validarCentralPrivacidade()
+        home.validarCookiesAnaliticos()
+        home.validarListaCookiesAnaliticos()
 
-    // })
+    })
 
     // it('Valida Cookies Funcionais e Lista em Central de Preferência de Privacidade', () => {
     //     home.acessarSite()

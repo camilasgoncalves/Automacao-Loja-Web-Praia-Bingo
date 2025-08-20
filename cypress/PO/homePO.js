@@ -65,9 +65,19 @@ export class Home {
     }
 
     acessarSite() {
-        cy.visit('https://store.pipastudios.com/pt-BR')
+        this.visitarComLocalizacaoSP('https://store.pipastudios.com/pt-BR')
     }
 
+
+    visitarComLocalizacaoSP(url) {
+        cy.visit(url, {
+            onBeforeLoad(win) {
+                cy.stub(win.navigator.geolocation, 'getCurrentPosition').callsFake((cb) => {
+                    cb({ coords: { latitude: -23.5505, longitude: -46.6333 } }) // SP
+                })
+            }
+        })
+    }
 
     aceitarCookiesSeExistirem() {
         cy.wait(5000)
@@ -79,7 +89,7 @@ export class Home {
     }
 
     dispensarCookiesSeExistirem() {
-        cy.wait(5000)
+        cy.wait(3000)
         cy.get('button').invoke('text').then($el => {
             $el.includes('Aceitar tudo') ? this.elementos.btnAceitarTudo().click({ force: true }) : undefined
             $el.includes('Dispensar') ? this.elementos.btnDispensar().click({ force: true }) : undefined
