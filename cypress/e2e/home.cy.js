@@ -109,8 +109,8 @@ describe('Fluxos da Home', () => {
     it('Valida Cookies Analíticos e Lista em Central de Preferência de Privacidade', () => {
         home.acessarSite()
         // home.aceitarCookiesSeExistirem()
-        home.dispensarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
+        home.dispensarCookiesSeExistirem()
         home.validarCentralPrivacidade()
         home.validarCookiesAnaliticos()
         home.validarListaCookiesAnaliticos()
