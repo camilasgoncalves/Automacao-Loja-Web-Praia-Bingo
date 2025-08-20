@@ -79,6 +79,7 @@ export class Home {
     }
 
     dispensarCookiesSeExistirem() {
+        cy.wait(5000)
         cy.get('button').invoke('text').then($el => {
             $el.includes('Aceitar tudo') ? this.elementos.btnAceitarTudo().click({ force: true }) : undefined
             $el.includes('Dispensar') ? this.elementos.btnDispensar().click({ force: true }) : undefined
@@ -162,7 +163,7 @@ export class Home {
     }
 
     validarCookiesEssenciais() {
-        this.elementos.btnCookiesEssenciais().should('exist').click()
+        this.elementos.btnCookiesEssenciais().should('be.visible').click()
     }
 
     validarListaCookiesEssenciais() {
@@ -172,7 +173,7 @@ export class Home {
     }
 
     validarCookiesAnaliticos() {
-        this.elementos.btnCookiesAnaliticos().should('exist').click()
+        this.elementos.btnCookiesAnaliticos().should('be.visible').click()
     }
 
     validarListaCookiesAnaliticos() {
@@ -183,7 +184,7 @@ export class Home {
 
     validarCentralPrivacidade() {
         this.elementos.btnPrivacidade().click({ force: true })
-        this.elementos.lblCentralPrivacidade().should('exist')
+        this.elementos.lblCentralPrivacidade().should('be.visible')
     }
 
     validarErroCupom() {
@@ -194,7 +195,7 @@ export class Home {
     }
 
     validarCookiesFuncionais() {
-        this.elementos.btnCookiesFuncionais().should('exist').click({ force: true })
+        this.elementos.btnCookiesFuncionais().should('be.visible').click({ force: true })
     }
 
     validarListaCookiesFuncionais() {
@@ -204,7 +205,7 @@ export class Home {
     }
 
     validarCookiesPersonalizacao() {
-        this.elementos.btnCookiesPersonalizacao().should('exist').click()
+        this.elementos.btnCookiesPersonalizacao().should('be.visible').click()
     }
 
     validarListaCookiesPersonalizacao() {
@@ -222,18 +223,18 @@ export class Home {
     }
 
     validarFecharCentral() {
-        this.elementos.btnFecharCentral().should('exist').click()
-        cy.get('[data-testid="copyright"]').should('be.exist')
+        this.elementos.btnFecharCentral().should('be.visible').click()
+        cy.get('[data-testid="copyright"]').should('be.visible')
     }
 
     validarRejeitarTudo() {
-        this.elementos.btnRejeitarTudo().should('exist').click()
-        cy.get('[data-testid="copyright"]').should('exist')
+        this.elementos.btnRejeitarTudo().should('be.visible').click()
+        cy.get('[data-testid="copyright"]').should('be.visible')
     }
 
     validarAceitarTudo() {
-        this.elementos.btnConfirmarSelecao().should('exist').click()
-        cy.get('[data-testid="copyright"]').should('exist')
+        this.elementos.btnConfirmarSelecao().should('be.visible').click()
+        cy.get('[data-testid="copyright"]').should('be.visible')
     }
 
     validarProgramaAfiliados() {
