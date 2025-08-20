@@ -17,3 +17,11 @@
 import './commands'
 import 'cypress-iframe'
 import 'cypress-mochawesome-reporter/register';
+import addContext from 'mochawesome/addContext';
+
+Cypress.on('test:after:run', (test, runnable) => {
+    if (test.state === 'failed') {
+        const videoPath = `videos/${Cypress.spec.name}.mp4`;
+        addContext({ test }, videoPath);
+    }
+});
