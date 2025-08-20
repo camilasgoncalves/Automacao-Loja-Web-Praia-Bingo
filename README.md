@@ -29,4 +29,16 @@ A automação cobre cenários críticos da loja, como:
 
     npx cypress open
 
+Este projeto roda automaticamente os testes usando Cypress sempre que há push para a branch `main` ou `develop`. 
+
+O workflow verifica:
+- Build do projeto
+- Execução de testes
+
+[![Loja Web Praia Bingo - Testes de Login](https://github.com/camilasgoncalves/Automacao-Loja-Web-Praia-Bingo/actions/workflows/testes-login.yml/badge.svg)](https://github.com/camilasgoncalves/Automacao-Loja-Web-Praia-Bingo/actions/workflows/testes-login.yml)
+
+[![Loja Web Praia Bingo - Testes da Home](https://github.com/camilasgoncalves/Automacao-Loja-Web-Praia-Bingo/actions/workflows/testes-home.yml/badge.svg)](https://github.com/camilasgoncalves/Automacao-Loja-Web-Praia-Bingo/actions/workflows/testes-home.yml)
+
+[![Loja Web Praia Bingo - Testes da Xsolla - Banners de Compras](https://github.com/camilasgoncalves/Automacao-Loja-Web-Praia-Bingo/actions/workflows/testes-xsolla.yml/badge.svg)](https://github.com/camilasgoncalves/Automacao-Loja-Web-Praia-Bingo/actions/workflows/testes-xsolla.yml)
+
 Projeto criado e mantido por Camila 🧪
