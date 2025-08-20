@@ -109,7 +109,7 @@ describe('Fluxos da Home', () => {
     it('Valida Cookies Analíticos e Lista em Central de Preferência de Privacidade', () => {
         home.acessarSite()
         // home.aceitarCookiesSeExistirem()
-        home.dispensarCookiesSeExistirem()
+        home.tentarFecharBanner()
         home.fecharAdicionarTelaInicio()
         home.validarCentralPrivacidade()
         home.validarCookiesAnaliticos()
@@ -120,7 +120,7 @@ describe('Fluxos da Home', () => {
     it('Valida Cookies Funcionais e Lista em Central de Preferência de Privacidade', () => {
         home.acessarSite()
         //home.aceitarCookiesSeExistirem()
-        home.dispensarCookiesSeExistirem()
+        home.tentarFecharBanner()
         home.fecharAdicionarTelaInicio()
         home.validarCentralPrivacidade()
         home.validarCookiesFuncionais()

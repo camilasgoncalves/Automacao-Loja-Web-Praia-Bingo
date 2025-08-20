@@ -85,276 +85,287 @@ export class Home {
         })
     }
 
+    tentarFecharBanner(tentativas = 5) {
+        if (tentativas === 0) return
 
-    fecharAdicionarTelaInicio() {
-        cy.get('[data-testid="pwa-close-icon"] svg path')
-            .invoke('attr', 'clip-rule')
-            .then(clipRule => {
-                if (clipRule && clipRule.includes('evenodd')) {
-                    this.elementos.btnFechar().click();
-                }
-            })
+        cy.get('button').invoke('text').then($el => {
+            if ($el.find('Dispensar').length > 0) {
+                this.elementos.btnDispensar().click({ force: true })
+                this.tentarFecharBanner(tentativas - 1)
+            }
+        })
     }
 
-    acessarLogin() {
-        this.elementos.btnAcessar().should('be.visible').click()
+
+fecharAdicionarTelaInicio() {
+    cy.get('[data-testid="pwa-close-icon"] svg path')
+        .invoke('attr', 'clip-rule')
+        .then(clipRule => {
+            if (clipRule && clipRule.includes('evenodd')) {
+                this.elementos.btnFechar().click();
+            }
+        })
+}
+
+acessarLogin() {
+    this.elementos.btnAcessar().should('be.visible').click()
+}
+
+logOut() {
+    this.elementos.btnLogout().should('be.visible').click()
+}
+
+validarColetaPresente() {
+    this.elementos.btnColetar().should('be.visible').click()
+    this.elementos.mdlVoceRecebeu().should('be.visible')
+    this.elementos.btnVoltar().click()
+
+}
+
+validarBotaoFichas() {
+    this.elementos.btnFichas().should('be.visible').click()
+    this.elementos.lblFichas().should('be.visible')
+
+}
+
+validarBotaoDindins() {
+    this.elementos.btnDindins().should('be.visible').click()
+    this.elementos.lblDindins().should('be.visible')
+
+}
+
+validarBotaoPequenosPrecos() {
+    this.elementos.btnPequenosPrecos().should('be.visible').click()
+    this.elementos.lblPequenosPrecos().should('be.visible')
+
+}
+
+validarBotaoYoutube() {
+    cy.get('a.inner-social-media-item')
+        .should('have.attr', 'href', 'https://www.youtube.com/@praiabingobrasil')
+        .and('have.attr', 'target', '_blank').and('have.attr', 'rel').should('include', 'noopener');
+}
+
+validarBotaoInstagram() {
+    cy.get('a.inner-social-media-item[href="https://www.instagram.com/praiabingo/"]')
+        .should('have.attr', 'target', '_blank')
+        .and('have.attr', 'rel').should('include', 'noopener')
+
+}
+
+validarBotaoFacebook() {
+    cy.get('a.inner-social-media-item[href="https://www.facebook.com/PraiaBingo"]')
+        .should('have.attr', 'target', '_blank')
+        .and('have.attr', 'rel').should('include', 'noopener')
+
+}
+
+validarBotaoGooglePlay() {
+    cy.get('a[data-button-type="google_play_button"]')
+        .should('have.attr', 'href')
+        .and('include', 'https://play.google.com/store/apps/details?id=air.com.pipastudios.release.praiabingo');
+
+}
+
+validarBotaoAppStore() {
+    cy.get('a[data-button-type="apple_store_button"]')
+        .should('have.attr', 'href')
+        .and('include', 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=0CDcQw7AJahcKEwjY0tvU4rmBAxUAAAAAHQAAAAAQAw&url=https%3A%2F%2Fapps.apple.com%2Fbr%2Fapp%2Fpraia-bingo-jogo-de-bingo%2Fid722428252&psig=AOvVaw2UXy4TGfgLUFT55Kfol_c6&ust=1695319294775911&opi=89978449&_xm=212542.402170118508904462');
+}
+
+validarCookiesEssenciais() {
+    this.elementos.btnCookiesEssenciais().should('be.visible').click()
+}
+
+validarListaCookiesEssenciais() {
+    cy.get('a.gdpr-settings-content__link')
+        .should('have.attr', 'href', 'https://xsolla.com/cookie#essentional');
+
+}
+
+validarCookiesAnaliticos() {
+    this.elementos.btnCookiesAnaliticos().should('be.visible').click()
+}
+
+validarListaCookiesAnaliticos() {
+    cy.get('.gdpr-settings-content__link')
+        .should('have.attr', 'href', 'https://xsolla.com/cookie#analytical');
+
+}
+
+validarCentralPrivacidade() {
+    this.elementos.btnPrivacidade().click({ force: true })
+    cy.get('h4.gdpr-settings-screen__title').should('be.visible')
+}
+
+validarErroCupom() {
+    this.elementos.lblCupomDesconto().should('be.visible').type('11111111')
+    this.elementos.btnAplicarDesconto().click()
+    this.elementos.lblErroCupom().should('be.visible')
+
+}
+
+validarCookiesFuncionais() {
+    this.elementos.btnCookiesFuncionais().should('be.visible').click({ force: true })
+}
+
+validarListaCookiesFuncionais() {
+    cy.get('a.gdpr-settings-content__link')
+        .should('have.attr', 'href', 'https://xsolla.com/cookie#functional')
+
+}
+
+validarCookiesPersonalizacao() {
+    this.elementos.btnCookiesPersonalizacao().should('be.visible').click()
+}
+
+validarListaCookiesPersonalizacao() {
+    cy.get('a.gdpr-settings-content__link')
+        .should('have.attr', 'href', 'https://xsolla.com/cookie#targeting')
+}
+
+validarPoliticaCookies() {
+    cy.get('a.gdpr-settings-footer__link').should('have.attr', 'href', 'https://xsolla.com/cookie').and('contain', 'Política de Cookies')
+
+}
+
+validarPoliticaPrivacidade() {
+    cy.contains('a.gdpr-settings-footer__link').should('have.attr', 'href', 'https://xsolla.com/privacypolicy?_xm=212542.402170118508904462')
+}
+
+validarFecharCentral() {
+    this.elementos.btnFecharCentral().should('be.visible').click()
+    cy.get('[data-testid="copyright"]').should('be.visible')
+}
+
+validarRejeitarTudo() {
+    this.elementos.btnRejeitarTudo().should('be.visible').click()
+    cy.get('[data-testid="copyright"]').should('be.visible')
+}
+
+validarAceitarTudo() {
+    this.elementos.btnConfirmarSelecao().should('be.visible').click()
+    cy.get('[data-testid="copyright"]').should('be.visible')
+}
+
+validarProgramaAfiliados() {
+    cy.contains('a.affiliate-program-button').should('have.attr', 'href', 'https://influencer.xsolla.com/?utm_source=sitebuilder&utm_medium=footer_affiliate_link&utm_campaign=394398&utm_content=223867&utm_term=212542&_xm=212542.402170118508904462')
+}
+
+validarJogueAgora() {
+    cy.contains('a.ui-site-calltoaction').should('have.attr', 'href', 'https://pipastudios.com/deeplinks/classic/?goto=ibiza&_xm=212542.402170118508904462')
+}
+
+validarPerguntar(pergunta) {
+    switch (pergunta) {
+        case 'Posso usar os itens que compro na Loja Web no jogo Praia Bingo?':
+            this.elementos.btnPergunta1().should('be.visible').click()
+            cy.get('[data-testid="editor-text"]').contains('Sim, e apenas no Praia Bingo! Este site serve apenas como uma loja virtual, não sendo possível jogar o Praia Bingo por aqui.')
+            break
+        case 'Quanto tempo demora para liberar no Praia Bingo os itens que comprei aqui na loja?':
+            this.elementos.btnPergunta2().should('be.visible').click()
+            cy.get('[data-testid="editor-text"]').contains('Em até 3 minutos depois de ter efetuado a compra, os itens estarão no aplicativo no Praia Bingo em seu celular ou tablet, disponíveis para você curtir. ')
+            break
+        case 'Só posso comprar se informar meu ID?':
+            this.elementos.btnPergunta3().should('be.visible').click()
+            cy.get('[data-testid="editor-text"]').contains('Sim, seu ID (número de identificação) é o que vai direcionar a compra para seu usuário no jogo.')
+            break
+        case 'Onde encontro meu ID Praia Bingo?':
+            this.elementos.btnPergunta4().should('be.visible').click()
+            cy.get('[data-testid="editor-text"]').contains('Em seu aplicativo do Praia Bingo, siga as seguintes instruções para encontrar seu ID (número de identificação):')
+            break
+        case 'Meu ID não está funcionando.':
+            this.elementos.btnPergunta5().should('be.visible').click()
+            cy.get('[data-testid="editor-text"]').contains('Se você já verificou que o ID está correto e tentou algumas vezes acessar o site (esperando alguns minutos entre cada tentativa) e ainda assim não obteve sucesso, entre em contato com nosso')
+            break
+        case 'Quais são os métodos de pagamento suportados na loja? ':
+            this.elementos.btnPergunta6().should('be.visible').click()
+            cy.get('[data-testid="editor-text"]').contains('Você pode efetuar suas compras com cartões de crédito e débito e Pix. Não aceitamos pagamentos via boleto até o momento.')
+            break
+        case 'Como adicionar e salvar um método de pagamento? ':
+            this.elementos.btnPergunta7().should('be.visible').click()
+            cy.get('[data-testid="editor-text"]').contains('Selecione os itens que deseja comprar e envie para o carrinho de compra:')
+            break
+        case 'Não consigo concluir a compra porque aparece “as informações do cartão de crédito/débito não são válidas".':
+            this.elementos.btnPergunta8().should('be.visible').click()
+            cy.get('[data-testid="editor-text"]').contains('Certifique-se de ter inserido as informações corretas e tente novamente. Caso precise de ajuda, entre em contato com o nosso ')
+            break
+        case 'Não vejo meu produto comprado no jogo.':
+            this.elementos.btnPergunta9().should('be.visible').click()
+            cy.get('[data-testid="editor-text"]').contains('Certifique-se de estar conectado ao jogo com o mesmo ID Praia Bingo usado para fazer a compra. Se a compra ainda não estiver visível, entre em contato com o nosso ')
+            break
+        case 'Comprei itens para a conta de jogo errada. ':
+            this.elementos.btnPergunta10().should('be.visible').click()
+            cy.get('[data-testid="editor-text"]').contains('Entre em contato com o ').and(' para solucionar esse problema. ')
+            break
+        case 'Recebi menos itens no jogo do que comprei no site. ':
+            this.elementos.btnPergunta11().should('be.visible').click()
+            cy.get('div[data-testid="editor-text"].xds-text.xds-text-paragraph.faq-card__text.faq-card__answer-text.faq-card__answer-text--opened a').should('have.attr', 'href', 'mailto:suporte@pipastudios.com').and('contain', 'time de atendimento');
     }
+}
 
-    logOut() {
-        this.elementos.btnLogout().should('be.visible').click()
+validarIdiomas(idioma) {
+    switch (idioma) {
+        case 'English':
+            cy.get('select.locale-select.locale-select--compact').select('English')
+            cy.get('div[data-testid="section-title"]').contains('BIG OFFERS')
+            break
+        case 'Espanõl':
+            cy.get('select.locale-select.locale-select--compact').select('Español')
+            cy.get('div[data-testid="section-title"]').contains('Ofertas Especiales')
+            break
+        case 'Italiano':
+            cy.get('select.locale-select.locale-select--compact').select('Italiano')
+            cy.get('div[data-testid="section-title"]').contains('Grandi Offerte')
+            break
     }
+}
 
-    validarColetaPresente() {
-        this.elementos.btnColetar().should('be.visible').click()
-        this.elementos.mdlVoceRecebeu().should('be.visible')
-        this.elementos.btnVoltar().click()
+validarBannerBoasVindas() {
+    this.elementos.btnOfertaBoasVindas().should('be.visible').click()
+}
 
-    }
+validarOfertaEspecial() {
+    this.elementos.btnOfertaEspecial().should('be.visible').click()
+}
 
-    validarBotaoFichas() {
-        this.elementos.btnFichas().should('be.visible').click()
-        this.elementos.lblFichas().should('be.visible')
+validarOfertaExclusiva() {
+    this.elementos.btnOfertaExclusiva().should('be.visible').click()
+}
 
-    }
+validarCompraFichinhas() {
+    this.elementos.btnFichinhas().should('be.visible').click()
+}
 
-    validarBotaoDindins() {
-        this.elementos.btnDindins().should('be.visible').click()
-        this.elementos.lblDindins().should('be.visible')
+validarComprarDindinzinhos() {
+    this.elementos.btnDindinzinhos().should('be.visible').click()
+}
 
-    }
+validarComprarCombinho() {
+    this.elementos.btnCombinho().should('be.visible').click()
+}
 
-    validarBotaoPequenosPrecos() {
-        this.elementos.btnPequenosPrecos().should('be.visible').click()
-        this.elementos.lblPequenosPrecos().should('be.visible')
+validarComprarFichas() {
+    this.elementos.btnOfertaFichas().should('be.visible').click()
+}
 
-    }
+validarComprarMaisFichas() {
+    this.elementos.btnMaisFichas().should('be.visible').click()
+}
 
-    validarBotaoYoutube() {
-        cy.get('a.inner-social-media-item')
-            .should('have.attr', 'href', 'https://www.youtube.com/@praiabingobrasil')
-            .and('have.attr', 'target', '_blank').and('have.attr', 'rel').should('include', 'noopener');
-    }
+validarComprarMonteDeFichas() {
+    this.elementos.btnMonteDeFichas().should('be.visible').click()
+}
 
-    validarBotaoInstagram() {
-        cy.get('a.inner-social-media-item[href="https://www.instagram.com/praiabingo/"]')
-            .should('have.attr', 'target', '_blank')
-            .and('have.attr', 'rel').should('include', 'noopener')
+validarComprarDindins() {
+    this.elementos.btnOfertaDindins().should('be.visible').click()
+}
 
-    }
+validarComprarMuitosDindins() {
+    this.elementos.btnMuitosDindins().should('be.visible').click()
+}
 
-    validarBotaoFacebook() {
-        cy.get('a.inner-social-media-item[href="https://www.facebook.com/PraiaBingo"]')
-            .should('have.attr', 'target', '_blank')
-            .and('have.attr', 'rel').should('include', 'noopener')
-
-    }
-
-    validarBotaoGooglePlay() {
-        cy.get('a[data-button-type="google_play_button"]')
-            .should('have.attr', 'href')
-            .and('include', 'https://play.google.com/store/apps/details?id=air.com.pipastudios.release.praiabingo');
-
-    }
-
-    validarBotaoAppStore() {
-        cy.get('a[data-button-type="apple_store_button"]')
-            .should('have.attr', 'href')
-            .and('include', 'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=0CDcQw7AJahcKEwjY0tvU4rmBAxUAAAAAHQAAAAAQAw&url=https%3A%2F%2Fapps.apple.com%2Fbr%2Fapp%2Fpraia-bingo-jogo-de-bingo%2Fid722428252&psig=AOvVaw2UXy4TGfgLUFT55Kfol_c6&ust=1695319294775911&opi=89978449&_xm=212542.402170118508904462');
-    }
-
-    validarCookiesEssenciais() {
-        this.elementos.btnCookiesEssenciais().should('be.visible').click()
-    }
-
-    validarListaCookiesEssenciais() {
-        cy.get('a.gdpr-settings-content__link')
-            .should('have.attr', 'href', 'https://xsolla.com/cookie#essentional');
-
-    }
-
-    validarCookiesAnaliticos() {
-        this.elementos.btnCookiesAnaliticos().should('be.visible').click()
-    }
-
-    validarListaCookiesAnaliticos() {
-        cy.get('.gdpr-settings-content__link')
-            .should('have.attr', 'href', 'https://xsolla.com/cookie#analytical');
-
-    }
-
-    validarCentralPrivacidade() {
-        this.elementos.btnPrivacidade().click({ force: true })
-        cy.get('h4.gdpr-settings-screen__title').should('be.visible')
-    }
-
-    validarErroCupom() {
-        this.elementos.lblCupomDesconto().should('be.visible').type('11111111')
-        this.elementos.btnAplicarDesconto().click()
-        this.elementos.lblErroCupom().should('be.visible')
-
-    }
-
-    validarCookiesFuncionais() {
-        this.elementos.btnCookiesFuncionais().should('be.visible').click({ force: true })
-    }
-
-    validarListaCookiesFuncionais() {
-        cy.get('a.gdpr-settings-content__link')
-            .should('have.attr', 'href', 'https://xsolla.com/cookie#functional')
-
-    }
-
-    validarCookiesPersonalizacao() {
-        this.elementos.btnCookiesPersonalizacao().should('be.visible').click()
-    }
-
-    validarListaCookiesPersonalizacao() {
-        cy.get('a.gdpr-settings-content__link')
-            .should('have.attr', 'href', 'https://xsolla.com/cookie#targeting')
-    }
-
-    validarPoliticaCookies() {
-        cy.get('a.gdpr-settings-footer__link').should('have.attr', 'href', 'https://xsolla.com/cookie').and('contain', 'Política de Cookies')
-
-    }
-
-    validarPoliticaPrivacidade() {
-        cy.contains('a.gdpr-settings-footer__link').should('have.attr', 'href', 'https://xsolla.com/privacypolicy?_xm=212542.402170118508904462')
-    }
-
-    validarFecharCentral() {
-        this.elementos.btnFecharCentral().should('be.visible').click()
-        cy.get('[data-testid="copyright"]').should('be.visible')
-    }
-
-    validarRejeitarTudo() {
-        this.elementos.btnRejeitarTudo().should('be.visible').click()
-        cy.get('[data-testid="copyright"]').should('be.visible')
-    }
-
-    validarAceitarTudo() {
-        this.elementos.btnConfirmarSelecao().should('be.visible').click()
-        cy.get('[data-testid="copyright"]').should('be.visible')
-    }
-
-    validarProgramaAfiliados() {
-        cy.contains('a.affiliate-program-button').should('have.attr', 'href', 'https://influencer.xsolla.com/?utm_source=sitebuilder&utm_medium=footer_affiliate_link&utm_campaign=394398&utm_content=223867&utm_term=212542&_xm=212542.402170118508904462')
-    }
-
-    validarJogueAgora() {
-        cy.contains('a.ui-site-calltoaction').should('have.attr', 'href', 'https://pipastudios.com/deeplinks/classic/?goto=ibiza&_xm=212542.402170118508904462')
-    }
-
-    validarPerguntar(pergunta) {
-        switch (pergunta) {
-            case 'Posso usar os itens que compro na Loja Web no jogo Praia Bingo?':
-                this.elementos.btnPergunta1().should('be.visible').click()
-                cy.get('[data-testid="editor-text"]').contains('Sim, e apenas no Praia Bingo! Este site serve apenas como uma loja virtual, não sendo possível jogar o Praia Bingo por aqui.')
-                break
-            case 'Quanto tempo demora para liberar no Praia Bingo os itens que comprei aqui na loja?':
-                this.elementos.btnPergunta2().should('be.visible').click()
-                cy.get('[data-testid="editor-text"]').contains('Em até 3 minutos depois de ter efetuado a compra, os itens estarão no aplicativo no Praia Bingo em seu celular ou tablet, disponíveis para você curtir. ')
-                break
-            case 'Só posso comprar se informar meu ID?':
-                this.elementos.btnPergunta3().should('be.visible').click()
-                cy.get('[data-testid="editor-text"]').contains('Sim, seu ID (número de identificação) é o que vai direcionar a compra para seu usuário no jogo.')
-                break
-            case 'Onde encontro meu ID Praia Bingo?':
-                this.elementos.btnPergunta4().should('be.visible').click()
-                cy.get('[data-testid="editor-text"]').contains('Em seu aplicativo do Praia Bingo, siga as seguintes instruções para encontrar seu ID (número de identificação):')
-                break
-            case 'Meu ID não está funcionando.':
-                this.elementos.btnPergunta5().should('be.visible').click()
-                cy.get('[data-testid="editor-text"]').contains('Se você já verificou que o ID está correto e tentou algumas vezes acessar o site (esperando alguns minutos entre cada tentativa) e ainda assim não obteve sucesso, entre em contato com nosso')
-                break
-            case 'Quais são os métodos de pagamento suportados na loja? ':
-                this.elementos.btnPergunta6().should('be.visible').click()
-                cy.get('[data-testid="editor-text"]').contains('Você pode efetuar suas compras com cartões de crédito e débito e Pix. Não aceitamos pagamentos via boleto até o momento.')
-                break
-            case 'Como adicionar e salvar um método de pagamento? ':
-                this.elementos.btnPergunta7().should('be.visible').click()
-                cy.get('[data-testid="editor-text"]').contains('Selecione os itens que deseja comprar e envie para o carrinho de compra:')
-                break
-            case 'Não consigo concluir a compra porque aparece “as informações do cartão de crédito/débito não são válidas".':
-                this.elementos.btnPergunta8().should('be.visible').click()
-                cy.get('[data-testid="editor-text"]').contains('Certifique-se de ter inserido as informações corretas e tente novamente. Caso precise de ajuda, entre em contato com o nosso ')
-                break
-            case 'Não vejo meu produto comprado no jogo.':
-                this.elementos.btnPergunta9().should('be.visible').click()
-                cy.get('[data-testid="editor-text"]').contains('Certifique-se de estar conectado ao jogo com o mesmo ID Praia Bingo usado para fazer a compra. Se a compra ainda não estiver visível, entre em contato com o nosso ')
-                break
-            case 'Comprei itens para a conta de jogo errada. ':
-                this.elementos.btnPergunta10().should('be.visible').click()
-                cy.get('[data-testid="editor-text"]').contains('Entre em contato com o ').and(' para solucionar esse problema. ')
-                break
-            case 'Recebi menos itens no jogo do que comprei no site. ':
-                this.elementos.btnPergunta11().should('be.visible').click()
-                cy.get('div[data-testid="editor-text"].xds-text.xds-text-paragraph.faq-card__text.faq-card__answer-text.faq-card__answer-text--opened a').should('have.attr', 'href', 'mailto:suporte@pipastudios.com').and('contain', 'time de atendimento');
-        }
-    }
-
-    validarIdiomas(idioma) {
-        switch (idioma) {
-            case 'English':
-                cy.get('select.locale-select.locale-select--compact').select('English')
-                cy.get('div[data-testid="section-title"]').contains('BIG OFFERS')
-                break
-            case 'Espanõl':
-                cy.get('select.locale-select.locale-select--compact').select('Español')
-                cy.get('div[data-testid="section-title"]').contains('Ofertas Especiales')
-                break
-            case 'Italiano':
-                cy.get('select.locale-select.locale-select--compact').select('Italiano')
-                cy.get('div[data-testid="section-title"]').contains('Grandi Offerte')
-                break
-        }
-    }
-
-    validarBannerBoasVindas() {
-        this.elementos.btnOfertaBoasVindas().should('be.visible').click()
-    }
-
-    validarOfertaEspecial() {
-        this.elementos.btnOfertaEspecial().should('be.visible').click()
-    }
-
-    validarOfertaExclusiva() {
-        this.elementos.btnOfertaExclusiva().should('be.visible').click()
-    }
-
-    validarCompraFichinhas() {
-        this.elementos.btnFichinhas().should('be.visible').click()
-    }
-
-    validarComprarDindinzinhos() {
-        this.elementos.btnDindinzinhos().should('be.visible').click()
-    }
-
-    validarComprarCombinho() {
-        this.elementos.btnCombinho().should('be.visible').click()
-    }
-
-    validarComprarFichas() {
-        this.elementos.btnOfertaFichas().should('be.visible').click()
-    }
-
-    validarComprarMaisFichas() {
-        this.elementos.btnMaisFichas().should('be.visible').click()
-    }
-
-    validarComprarMonteDeFichas() {
-        this.elementos.btnMonteDeFichas().should('be.visible').click()
-    }
-
-    validarComprarDindins() {
-        this.elementos.btnOfertaDindins().should('be.visible').click()
-    }
-
-    validarComprarMuitosDindins() {
-        this.elementos.btnMuitosDindins().should('be.visible').click()
-    }
-
-    validarComprarMaisDindins() {
-        this.elementos.btnMaisDindins().should('be.visible').click()
-    }
+validarComprarMaisDindins() {
+    this.elementos.btnMaisDindins().should('be.visible').click()
+}
 }
