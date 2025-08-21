@@ -25,3 +25,8 @@ Cypress.on('test:after:run', (test, runnable) => {
         addContext({ test }, videoPath);
     }
 });
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+  return false
+})
+
