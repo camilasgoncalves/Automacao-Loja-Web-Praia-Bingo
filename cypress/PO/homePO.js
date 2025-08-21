@@ -65,18 +65,7 @@ export class Home {
     }
 
     acessarSite() {
-        this.visitarComLocalizacaoSP('https://store.pipastudios.com/pt-BR')
-    }
-
-
-    visitarComLocalizacaoSP(url) {
-        cy.visit(url, {
-            onBeforeLoad(win) {
-                cy.stub(win.navigator.geolocation, 'getCurrentPosition').callsFake((cb) => {
-                    cb({ coords: { latitude: -23.5505, longitude: -46.6333 } }) // SP
-                })
-            }
-        })
+        cy.visit('https://store.pipastudios.com/pt-BR')
     }
 
     aceitarCookiesSeExistirem() {
