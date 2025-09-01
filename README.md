@@ -1,5 +1,7 @@
 # 🏝️ Automação E2E – Loja Web do Jogo Praia Bingo
 
+![Cypress](https://img.shields.io/badge/Cypress-8BA8FF?logo=cypress&logoColor=white) ![Node.js](https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white) ![Workflow](https://img.shields.io/badge/CI/CD-AUTO-green) ![Mocha](https://img.shields.io/badge/Mocha-8D6748?logo=mocha&logoColor=white) ![Chai](https://img.shields.io/badge/Chai-A30701?logo=chai&logoColor=white) ![Mochawesome](https://img.shields.io/badge/Mochawesome-FF69B4?logo=mochawesome&logoColor=white)
+
 Este projeto tem como objetivo automatizar testes end-to-end (E2E) da loja web do jogo **Praia Bingo**, garantindo que as funcionalidades principais estejam sempre funcionando corretamente e proporcionando uma melhor experiência aos usuários.
 
 ## 🔍 Descrição
@@ -36,10 +38,6 @@ O workflow verifica:
 - Build do projeto
 - Execução de testes
 
-[![Loja Web Praia Bingo - Testes de Login](https://github.com/camilasgoncalves/Automacao-Loja-Web-Praia-Bingo/actions/workflows/testes-login.yml/badge.svg)](https://github.com/camilasgoncalves/Automacao-Loja-Web-Praia-Bingo/actions/workflows/testes-login.yml)
-
-[![Loja Web Praia Bingo - Testes da Home](https://github.com/camilasgoncalves/Automacao-Loja-Web-Praia-Bingo/actions/workflows/testes-home.yml/badge.svg)](https://github.com/camilasgoncalves/Automacao-Loja-Web-Praia-Bingo/actions/workflows/testes-home.yml)
-
-[![Loja Web Praia Bingo - Testes da Xsolla - Banners de Compras](https://github.com/camilasgoncalves/Automacao-Loja-Web-Praia-Bingo/actions/workflows/testes-xsolla.yml/badge.svg)](https://github.com/camilasgoncalves/Automacao-Loja-Web-Praia-Bingo/actions/workflows/testes-xsolla.yml)
+[![Loja Web Praia Bingo - Testes de Login](https://github.com/camilasgoncalves/Automacao-Loja-Web-Praia-Bingo/actions/workflows/testes-login.yml/badge.svg)](https://github.com/camilasgoncalves/Automacao-Loja-Web-Praia-Bingo/actions/workflows/testes-login.yml) [![Loja Web Praia Bingo - Testes da Home](https://github.com/camilasgoncalves/Automacao-Loja-Web-Praia-Bingo/actions/workflows/testes-home.yml/badge.svg)](https://github.com/camilasgoncalves/Automacao-Loja-Web-Praia-Bingo/actions/workflows/testes-home.yml) [![Loja Web Praia Bingo - Testes da Xsolla - Banners de Compras](https://github.com/camilasgoncalves/Automacao-Loja-Web-Praia-Bingo/actions/workflows/testes-xsolla.yml/badge.svg)](https://github.com/camilasgoncalves/Automacao-Loja-Web-Praia-Bingo/actions/workflows/testes-xsolla.yml)
 
 Projeto criado e mantido por Camila 🧪
