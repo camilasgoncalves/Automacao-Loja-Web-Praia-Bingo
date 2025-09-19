@@ -301,11 +301,11 @@ export class Home {
                 break
             case 'Espanõl':
                 cy.get('select.locale-select.locale-select--compact').select('Español')
-                cy.get('div[data-testid="section-title"]').contains('Ofertas Especiales')
+                cy.get('div[data-testid="section-title"]').contains('¡Precios pequeños!')
                 break
             case 'Italiano':
                 cy.get('select.locale-select.locale-select--compact').select('Italiano')
-                cy.get('div[data-testid="section-title"]').contains('Offerta Speciale')
+                cy.get('div[data-testid="section-title"]').contains('Piccoli prezzi!')
                 break
         }
     }
