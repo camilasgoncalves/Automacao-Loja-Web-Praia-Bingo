@@ -57,7 +57,8 @@ export class Home {
         lblName: () => cy.get('#x-text-control-input-user_name'),
         btnFecharCookies: () => cy.get('button[data-action="close-banner"]'),
         btnDispensar: () => cy.get('#reject-button').contains('Dispensar'),
-        lblCentralPrivacidade: () => cy.get('h4.gdpr-settings-screen__title').contains('Central de Preferência de Privacidade')
+        lblCentralPrivacidade: () => cy.get('h4.gdpr-settings-screen__title').contains('Central de Preferência de Privacidade'),
+        btnIndiqueeGanhe: () => cy.contains('Indique e Ganhe')
 
 
 
@@ -296,7 +297,7 @@ export class Home {
         switch (idioma) {
             case 'English':
                 cy.get('select.locale-select.locale-select--compact').select('English')
-                cy.get('div[data-testid="section-title"]').contains('BIG OFFERS')
+                cy.get('div[data-testid="section-title"]').contains('Huge Luck, small prices!')
                 break
             case 'Espanõl':
                 cy.get('select.locale-select.locale-select--compact').select('Español')
@@ -304,7 +305,7 @@ export class Home {
                 break
             case 'Italiano':
                 cy.get('select.locale-select.locale-select--compact').select('Italiano')
-                cy.get('div[data-testid="section-title"]').contains('Grandi Offerte')
+                cy.get('div[data-testid="section-title"]').contains('Offerta Speciale')
                 break
         }
     }
@@ -356,4 +357,11 @@ export class Home {
     validarComprarMaisDindins() {
         this.elementos.btnMaisDindins().should('be.visible').click()
     }
+
+    // acessarIndiqueeGanhe() {
+    //     cy.getIframeBody('iframe[name="launcher"]')
+    //         .find(this.elementos.btnIndiqueeGanhe)
+    //         .click();
+
+    // }
 }

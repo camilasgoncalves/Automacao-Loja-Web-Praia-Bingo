@@ -227,6 +227,13 @@ describe('Fluxos da Home', () => {
         home.dispensarCookiesSeExistirem()
         home.fecharAdicionarTelaInicio()
         home.validarJogueAgora()
-    }) 
+    })
+
+    // it('Valida Indique e Ganhe', () => {
+    //     home.acessarSite()
+    //     home.dispensarCookiesSeExistirem()
+    //     home.fecharAdicionarTelaInicio()
+    //     home.acessarIndiqueeGanhe()
+    // })
 
 })

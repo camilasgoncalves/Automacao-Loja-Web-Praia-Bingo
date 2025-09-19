@@ -29,4 +29,3 @@ Cypress.on('test:after:run', (test, runnable) => {
 Cypress.on('uncaught:exception', (err, runnable) => {
   return false
 })
-

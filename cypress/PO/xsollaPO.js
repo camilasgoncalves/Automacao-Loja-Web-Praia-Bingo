@@ -20,7 +20,7 @@ export class Xsolla {
 
     validarFichinhas(){
          cy.origin('https://secure.xsolla.com', () => {
-            cy.visit('/paystation4/payment/3607?token=urq5NcCIoeIY04RcjgJ7kRbHTSyd8yfe_lc_pt_bg_2C2640_tb_6E7BF7&consentId=c3501cd4-5015-4cb5-af59-f07b4a408748&parent_domain=store.pipastudios.com')
+            cy.visit('https://secure.xsolla.com/paystation/?access_token=urq5uuJQrrvPLkMAjhrSYeBJ3e4VPd4S_lc_pt_bg_FFFFFF_tb_29BD39&consentId=c3501cd4-5015-4cb5-af59-f07b4a408748&parent_domain=store.pipastudios.com')
             cy.get('img[alt="Fichinhas"]').should('be.visible')
         }
         )
@@ -28,7 +28,7 @@ export class Xsolla {
 
     validarDindinzinhos(){
         cy.origin('https://secure.xsolla.com', () => {
-            cy.visit('/paystation4/payment/3607?token=urq5smIgtq2Xa6tc8BuQ7S62ysLYN8q7_lc_pt_bg_2C2640_tb_6E7BF7&consentId=c3501cd4-5015-4cb5-af59-f07b4a408748&parent_domain=store.pipastudios.com')
+            cy.visit('https://secure.xsolla.com/paystation/?access_token=urq5QvjwBEiRvZPTLLSYvjc3udpUlxFf_lc_pt_bg_FFFFFF_tb_29BD39&consentId=c3501cd4-5015-4cb5-af59-f07b4a408748&parent_domain=store.pipastudios.com')
             cy.get('img[alt="Dindinzinhos"]').should('be.visible')
         }
         )  
@@ -36,7 +36,7 @@ export class Xsolla {
 
     validarCombinho(){
          cy.origin('https://secure.xsolla.com', () => {
-            cy.visit('/paystation4/payment/3607?token=urq5HJJkrMHKBAEaiEDm45gb7qtDc4Ji_lc_pt_bg_2C2640_tb_6E7BF7&consentId=c3501cd4-5015-4cb5-af59-f07b4a408748&parent_domain=store.pipastudios.com')
+            cy.visit('https://secure.xsolla.com/paystation/?access_token=urq5C8PC4sIBmllgundKBE664llSutO7_lc_pt_bg_FFFFFF_tb_29BD39&consentId=c3501cd4-5015-4cb5-af59-f07b4a408748&parent_domain=store.pipastudios.com')
             cy.get('img[alt="Combinho"]').should('be.visible')
         }
         )
@@ -44,7 +44,7 @@ export class Xsolla {
 
     validarFichas(){
         cy.origin('https://secure.xsolla.com', () => {
-            cy.visit('/paystation4/payment/3607?token=urq5k8v31wbdvRNeT6GMH5nglMfPk4Kh_lc_pt_bg_2C2640_tb_6E7BF7&consentId=c3501cd4-5015-4cb5-af59-f07b4a408748&parent_domain=store.pipastudios.com')
+            cy.visit('https://secure.xsolla.com/paystation/?access_token=urq5fIDAQL3oKPXoU0ezoficE0FwArJ8_lc_pt_bg_FFFFFF_tb_29BD39&consentId=c3501cd4-5015-4cb5-af59-f07b4a408748&parent_domain=store.pipastudios.com')
             cy.get('img[alt="Fichas"]').should('be.visible')
         }
         )
@@ -52,7 +52,7 @@ export class Xsolla {
 
     validarMaisFichas(){
         cy.origin('https://secure.xsolla.com', () => {
-            cy.visit('/paystation4/payment/3607?token=urq5dfdMtyHrXZeH3p7nfUgA7v3DlPM8_lc_pt_bg_2C2640_tb_6E7BF7&consentId=c3501cd4-5015-4cb5-af59-f07b4a408748&parent_domain=store.pipastudios.com')
+            cy.visit('https://secure.xsolla.com/paystation/?access_token=urq5mh4XLpAfB1xWVsucgAhLVxzBvM9e_lc_pt_bg_FFFFFF_tb_29BD39&consentId=c3501cd4-5015-4cb5-af59-f07b4a408748&parent_domain=store.pipastudios.com')
             cy.get('img[alt="Mais fichas!"]').should('be.visible')
         }
         )
@@ -60,7 +60,7 @@ export class Xsolla {
 
     validarMonteDeFichas(){
         cy.origin('https://secure.xsolla.com', () => {
-            cy.visit('/paystation4/payment/3607?token=urq5MnRYnNzmAW5dptEgpauBGkxY3wou_lc_pt_bg_2C2640_tb_6E7BF7&consentId=c3501cd4-5015-4cb5-af59-f07b4a408748&parent_domain=store.pipastudios.com')
+            cy.visit('https://secure.xsolla.com/paystation/?access_token=urq58NaeMWYazoKm8vVrCBWbtAfSo0g1_lc_pt_bg_FFFFFF_tb_29BD39&consentId=c3501cd4-5015-4cb5-af59-f07b4a408748&parent_domain=store.pipastudios.com')
             cy.get('img[alt="Monte de Fichas"]').should('be.visible')
         }
         )
@@ -68,7 +68,7 @@ export class Xsolla {
 
     validarDindins(){
         cy.origin('https://secure.xsolla.com', () => {
-            cy.visit('/paystation4/payment/3607?token=urq5jBY0JsI0mmsxsuZygChj7aWQez71_lc_pt_bg_2C2640_tb_6E7BF7&consentId=c3501cd4-5015-4cb5-af59-f07b4a408748&parent_domain=store.pipastudios.com')
+            cy.visit('https://secure.xsolla.com/paystation/?access_token=urq5CwVcz8FxwpmXYWG7oggljgIZc9lL_lc_pt_bg_FFFFFF_tb_29BD39&consentId=c3501cd4-5015-4cb5-af59-f07b4a408748&parent_domain=store.pipastudios.com')
             cy.get('img[alt="Dindins"]').should('be.visible')
         }
         )
@@ -76,7 +76,7 @@ export class Xsolla {
 
     validarMaisDindins(){
         cy.origin('https://secure.xsolla.com', () => {
-            cy.visit('/paystation4/payment/3607?token=urq50YEOjhsIXsKtxPLCnTLOdBVDoaoR_lc_pt_bg_2C2640_tb_6E7BF7&consentId=c3501cd4-5015-4cb5-af59-f07b4a408748&parent_domain=store.pipastudios.com')
+            cy.visit('https://secure.xsolla.com/paystation/?access_token=urq5XSqZUfErj9EzCTQCiPKLHse2sSzx_lc_pt_bg_FFFFFF_tb_29BD39&consentId=c3501cd4-5015-4cb5-af59-f07b4a408748&parent_domain=store.pipastudios.com')
             cy.get('img[alt="Mais Dindins!"]').should('be.visible')
         }
         )
@@ -84,7 +84,7 @@ export class Xsolla {
 
     validarMuitosDindins(){
         cy.origin('https://secure.xsolla.com', () => {
-            cy.visit('/paystation4/payment/3607?token=urq5K4j0h02JopsTGqcjCNJs0KEUX6Yk_lc_pt_bg_2C2640_tb_6E7BF7&consentId=c3501cd4-5015-4cb5-af59-f07b4a408748&parent_domain=store.pipastudios.com')
+            cy.visit('https://secure.xsolla.com/paystation/?access_token=urq5N0JhMk3KIn076y6AmPZdHJBG1kWx_lc_pt_bg_FFFFFF_tb_29BD39&consentId=c3501cd4-5015-4cb5-af59-f07b4a408748&parent_domain=store.pipastudios.com')
             cy.get('img[alt="Muitos Dindins"]').should('be.visible')
         }
         )

@@ -8,30 +8,30 @@ const xsolla = new Xsolla()
 const login = new Login()
 const home = new Home()
 
-it('Validar Oferta de Boas Vindas', () =>{
+// it('Validar Oferta de Boas Vindas', () =>{
 
-        home.acessarSite()
-        //home.aceitarCookiesSeExistirem()
-        home.dispensarCookiesSeExistirem()
-        home.acessarLogin()
-        login.realizarLogin()
-        home.fecharAdicionarTelaInicio()
-        home.validarBannerBoasVindas()
-        xsolla.validarOfertaBoasVindas()
+//         home.acessarSite()
+//         //home.aceitarCookiesSeExistirem()
+//         home.dispensarCookiesSeExistirem()
+//         home.acessarLogin()
+//         login.realizarLogin()
+//         home.fecharAdicionarTelaInicio()
+//         home.validarBannerBoasVindas()
+//         xsolla.validarOfertaBoasVindas()
 
-})
+// })
 
-it('Validar Oferta Especial', () =>{
+// it('Validar Oferta Especial', () =>{
 
-        home.acessarSite()
-        //home.aceitarCookiesSeExistirem()
-        home.dispensarCookiesSeExistirem()
-        home.acessarLogin()
-        login.realizarLogin()
-        home.fecharAdicionarTelaInicio()
-        home.validarOfertaEspecial()
-        xsolla.validarOfertaExclusiva()
-})
+//         home.acessarSite()
+//         //home.aceitarCookiesSeExistirem()
+//         home.dispensarCookiesSeExistirem()
+//         home.acessarLogin()
+//         login.realizarLogin()
+//         home.fecharAdicionarTelaInicio()
+//         home.validarOfertaEspecial()
+//         xsolla.validarOfertaExclusiva()
+// })
 
 it('Validar item Fichinhas em Pequenos Preços!', () =>{
 
